@@ -35,3 +35,7 @@ func _process(delta):
 	position += Vector2.UP.rotated(rotation) * velocity * delta
 	var s = 2 + velocity/500
 	$Camera2D.zoom = Vector2(s, s)
+
+
+func _on_player_area_entered(area):
+	print("player area", area)
