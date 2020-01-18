@@ -13,3 +13,7 @@ func _ready():
 func _process(delta):
 	position += Vector2.UP.rotated(rotation) * velocity * delta
 	#$lasers.frame = ($lasers.frame + 1) % 16
+
+
+func _on_bullet_area_entered(area):
+	queue_free()

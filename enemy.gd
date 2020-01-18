@@ -14,7 +14,9 @@ func _process(delta):
 
 
 func _on_enemy_area_entered(area):
-	print(area)
+	$AnimationPlayer.play("fade")
+	$CPUParticles2D.emitting = true
+	#queue_free()
 	
 
 

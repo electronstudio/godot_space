@@ -26,8 +26,16 @@ window/size/height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[layer_names]
+
+2d_render/layer_1="player"
+2d_physics/layer_1="player"
+2d_render/layer_2="enemy"
+2d_physics/layer_2="enemy"
+
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.545098, 0.545098, 0.545098, 1 )

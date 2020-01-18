@@ -6,7 +6,7 @@ extends Area2D
 
 var velocity = 0.0
 
-var Bullet = preload("res://bullet.tscn")
+var Bullet = preload("res://player_bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
