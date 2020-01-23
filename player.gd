@@ -20,9 +20,9 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		rotation += 2.0 * delta
 	if Input.is_action_pressed("ui_up"):
-		velocity += 500.0 * delta
+		velocity += 700.0 * delta
 	if Input.is_action_pressed("ui_down"):
-		velocity -= 500.0 * delta
+		velocity -= 700.0 * delta
 	if Input.is_action_just_pressed("ui_accept"):
 		var bullet = Bullet.instance()
 		bullet.position = position
@@ -33,9 +33,9 @@ func _process(delta):
 	#else:
 		#$laser.hide()
 		
-	position += Vector2.LEFT.rotated(rotation) * velocity * delta
-	var s = 2 + velocity/500
-	$Camera2D.zoom = Vector2(s, s)
+	position += Vector2.RIGHT.rotated(rotation) * velocity * delta
+	#var s = 2 + velocity/500
+	#$Camera2D.zoom = Vector2(s, s)
 	
 
 func _on_player_area_entered(area):

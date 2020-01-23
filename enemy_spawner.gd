@@ -1,6 +1,6 @@
 extends Timer
 
-var Enemy = preload("res://enemy.tscn")
+export (PackedScene) var  Enemy
 
 export var MAX_ENEMIES = 10
 

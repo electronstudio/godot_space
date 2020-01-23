@@ -1,6 +1,6 @@
 extends Area2D
 
-var velocity = 2000.0
+var velocity = 1000.0
 var TURNING = 2 # max is about 2
 
 var Bullet = preload("res://enemy_bullet.tscn")
@@ -29,12 +29,12 @@ func _process(delta):
 #		bullet.velocity = velocity + 1000
 #		get_node("/root/main/bullets").add_child(bullet)
 
-	var d = position.angle_to_point(player.position) 
+	var d = player.position.angle_to_point(position) 
 
 	#if abs(Util.short_angle_dist(rotation, d))>0.4:
 	rotation = Util.lerp_angle(rotation, d, TURNING*delta)
 		
-	position += Vector2.LEFT.rotated(rotation) * velocity * delta
+	position += Vector2.RIGHT.rotated(rotation) * velocity * delta
 	
 	if randf()<0.01:
 		var bullet = Bullet.instance()

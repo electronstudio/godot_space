@@ -7,11 +7,11 @@ var velocity
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	position += Vector2.RIGHT.rotated(rotation) * 150
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += Vector2.LEFT.rotated(rotation) * velocity * delta
+	position += Vector2.RIGHT.rotated(rotation) * velocity * delta
 	#$lasers.frame = ($lasers.frame + 1) % 16
 
 
