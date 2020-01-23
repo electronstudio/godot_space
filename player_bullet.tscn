@@ -12,6 +12,7 @@ collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="lasers" type="Sprite" parent="."]
+light_mask = 4
 position = Vector2( 0, -3.8147e-06 )
 scale = Vector2( 3.16667, 3.73529 )
 texture = ExtResource( 2 )

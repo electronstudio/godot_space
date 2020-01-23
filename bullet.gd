@@ -11,7 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += Vector2.UP.rotated(rotation) * velocity * delta
+	position += Vector2.LEFT.rotated(rotation) * velocity * delta
 	#$lasers.frame = ($lasers.frame + 1) % 16
 
 
