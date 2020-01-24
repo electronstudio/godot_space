@@ -50,7 +50,7 @@ motion_scale = Vector2( 0.5, 0.5 )
 motion_mirroring = Vector2( 15360, 15360 )
 
 [node name="stars_small_1024" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 634, 359 )
+position = Vector2( 7680, 7680 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 1 )
 
@@ -58,7 +58,7 @@ texture = ExtResource( 1 )
 motion_mirroring = Vector2( 15360, 15360 )
 
 [node name="stars_big_1024" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 520, 510 )
+position = Vector2( 7680, 7680 )
 scale = Vector2( 15, 15 )
 texture = ExtResource( 2 )
 
@@ -153,8 +153,8 @@ stream = ExtResource( 10 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Light2D" type="Light2D" parent="HUD"]
-position = Vector2( 10, -110 )
-scale = Vector2( 49.5911, 49.6228 )
+position = Vector2( 5120, 5120 )
+scale = Vector2( 10, 10 )
 texture = ExtResource( 11 )
 energy = 5.0
 range_item_cull_mask = 3
