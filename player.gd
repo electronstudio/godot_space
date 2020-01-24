@@ -15,6 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	gamepad()
 	if Input.is_action_pressed("ui_left"):
 		rotation -= 2.0 * delta
 	if Input.is_action_pressed("ui_right"):
@@ -43,3 +44,10 @@ func _on_player_area_entered(area):
 	yield(get_tree().create_timer(1.0), "timeout")
 	modulate = Color(1, 1, 1, 255)
 	print("player area", area)
+	
+func gamepad():
+	var input = Vector2(Input.get_joy_axis(0, 0), Input.get_joy_axis(0, 1))
+	var direction = input.angle()
+	print(direction)
+	if input.length() > 0.2:
+		rotation = direction
