@@ -5,6 +5,7 @@ export var turning = 4.0
 export var health = 10
 
 var Bullet = preload("res://player_bullet.tscn")
+var score = 0
 
 func _process(delta):
 	if Input.is_action_pressed("ui_left"):
@@ -36,9 +37,11 @@ func _on_player_area_entered(area):
 	
 	
 func hitFX():
+	$crash_sound.play()
 	modulate = Color(1000, 0, 0, 255)
 	yield(get_tree().create_timer(1.0), "timeout")
 	modulate = Color(1, 1, 1, 255)
+	
 	
 	
 
@@ -56,7 +59,7 @@ enum  {CHARGING, DISCHARGING}
 var laser = DISCHARGING
 
 func laser(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and charge < 0.01:
 		laser = CHARGING
 
 	if Input.is_action_just_released("ui_accept"):
@@ -68,7 +71,7 @@ func laser(delta):
 	
 	if laser == DISCHARGING:
 		charge -= delta
-		if charge > 0.1:
+		if charge > 0.3:
 			$laser.show()
 			$laser.monitorable = true
 		else:

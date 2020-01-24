@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://bullet.gd" type="Script" id=1]
 [ext_resource path="res://objects/lasers.png" type="Texture" id=2]
+[ext_resource path="res://audio/digital_sfx/source/laser6.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.074
 height = 82.7269
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 3 )
 
 [node name="bullet" type="Area2D"]
 collision_mask = 2
@@ -23,4 +27,7 @@ hframes = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
 [connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]

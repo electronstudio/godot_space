@@ -1,0 +1,441 @@
+[gd_scene load_steps=126 format=2]
+
+[ext_resource path="res://audio/sfx_library.gd" type="Script" id=1]
+[ext_resource path="res://audio/digital_sfx/source/highDown.ogg" type="AudioStream" id=2]
+[ext_resource path="res://audio/digital_sfx/source/highUp.ogg" type="AudioStream" id=3]
+[ext_resource path="res://audio/digital_sfx/source/laser1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://audio/digital_sfx/source/laser2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://audio/digital_sfx/source/laser3.ogg" type="AudioStream" id=6]
+[ext_resource path="res://audio/digital_sfx/source/laser4.ogg" type="AudioStream" id=7]
+[ext_resource path="res://audio/digital_sfx/source/laser5.ogg" type="AudioStream" id=8]
+[ext_resource path="res://audio/digital_sfx/source/laser6.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audio/digital_sfx/source/laser7.ogg" type="AudioStream" id=10]
+[ext_resource path="res://audio/digital_sfx/source/laser8.ogg" type="AudioStream" id=11]
+[ext_resource path="res://audio/digital_sfx/source/laser9.ogg" type="AudioStream" id=12]
+[ext_resource path="res://audio/digital_sfx/source/lowDown.ogg" type="AudioStream" id=13]
+[ext_resource path="res://audio/digital_sfx/source/lowRandom.ogg" type="AudioStream" id=14]
+[ext_resource path="res://audio/digital_sfx/source/lowThreeTone.ogg" type="AudioStream" id=15]
+[ext_resource path="res://audio/digital_sfx/source/pepSound1.ogg" type="AudioStream" id=16]
+[ext_resource path="res://audio/digital_sfx/source/pepSound2.ogg" type="AudioStream" id=17]
+[ext_resource path="res://audio/digital_sfx/source/pepSound3.ogg" type="AudioStream" id=18]
+[ext_resource path="res://audio/digital_sfx/source/pepSound4.ogg" type="AudioStream" id=19]
+[ext_resource path="res://audio/digital_sfx/source/pepSound5.ogg" type="AudioStream" id=20]
+[ext_resource path="res://audio/digital_sfx/source/phaseJump1.ogg" type="AudioStream" id=21]
+[ext_resource path="res://audio/digital_sfx/source/phaseJump2.ogg" type="AudioStream" id=22]
+[ext_resource path="res://audio/digital_sfx/source/phaseJump3.ogg" type="AudioStream" id=23]
+[ext_resource path="res://audio/digital_sfx/source/phaseJump4.ogg" type="AudioStream" id=24]
+[ext_resource path="res://audio/digital_sfx/source/phaseJump5.ogg" type="AudioStream" id=25]
+[ext_resource path="res://audio/digital_sfx/source/phaserDown1.ogg" type="AudioStream" id=26]
+[ext_resource path="res://audio/digital_sfx/source/phaserDown2.ogg" type="AudioStream" id=27]
+[ext_resource path="res://audio/digital_sfx/source/phaserDown3.ogg" type="AudioStream" id=28]
+[ext_resource path="res://audio/digital_sfx/source/phaserUp1.ogg" type="AudioStream" id=29]
+[ext_resource path="res://audio/digital_sfx/source/phaserUp2.ogg" type="AudioStream" id=30]
+[ext_resource path="res://audio/digital_sfx/source/phaserUp3.ogg" type="AudioStream" id=31]
+[ext_resource path="res://audio/digital_sfx/source/phaserUp4.ogg" type="AudioStream" id=32]
+[ext_resource path="res://audio/digital_sfx/source/phaserUp5.ogg" type="AudioStream" id=33]
+[ext_resource path="res://audio/digital_sfx/source/phaserUp6.ogg" type="AudioStream" id=34]
+[ext_resource path="res://audio/digital_sfx/source/phaserUp7.ogg" type="AudioStream" id=35]
+[ext_resource path="res://audio/digital_sfx/source/powerUp1.ogg" type="AudioStream" id=36]
+[ext_resource path="res://audio/digital_sfx/source/powerUp2.ogg" type="AudioStream" id=37]
+[ext_resource path="res://audio/digital_sfx/source/powerUp3.ogg" type="AudioStream" id=38]
+[ext_resource path="res://audio/digital_sfx/source/powerUp4.ogg" type="AudioStream" id=39]
+[ext_resource path="res://audio/digital_sfx/source/powerUp5.ogg" type="AudioStream" id=40]
+[ext_resource path="res://audio/digital_sfx/source/powerUp6.ogg" type="AudioStream" id=41]
+[ext_resource path="res://audio/digital_sfx/source/powerUp7.ogg" type="AudioStream" id=42]
+[ext_resource path="res://audio/digital_sfx/source/powerUp8.ogg" type="AudioStream" id=43]
+[ext_resource path="res://audio/digital_sfx/source/powerUp9.ogg" type="AudioStream" id=44]
+[ext_resource path="res://audio/digital_sfx/source/powerUp10.ogg" type="AudioStream" id=45]
+[ext_resource path="res://audio/digital_sfx/source/powerUp11.ogg" type="AudioStream" id=46]
+[ext_resource path="res://audio/digital_sfx/source/powerUp12.ogg" type="AudioStream" id=47]
+[ext_resource path="res://audio/digital_sfx/source/spaceTrash1.ogg" type="AudioStream" id=48]
+[ext_resource path="res://audio/digital_sfx/source/spaceTrash2.ogg" type="AudioStream" id=49]
+[ext_resource path="res://audio/digital_sfx/source/spaceTrash3.ogg" type="AudioStream" id=50]
+[ext_resource path="res://audio/digital_sfx/source/spaceTrash4.ogg" type="AudioStream" id=51]
+[ext_resource path="res://audio/digital_sfx/source/spaceTrash5.ogg" type="AudioStream" id=52]
+[ext_resource path="res://audio/digital_sfx/source/threeTone1.ogg" type="AudioStream" id=53]
+[ext_resource path="res://audio/digital_sfx/source/threeTone2.ogg" type="AudioStream" id=54]
+[ext_resource path="res://audio/digital_sfx/source/tone1.ogg" type="AudioStream" id=55]
+[ext_resource path="res://audio/digital_sfx/source/twoTone1.ogg" type="AudioStream" id=56]
+[ext_resource path="res://audio/digital_sfx/source/twoTone2.ogg" type="AudioStream" id=57]
+[ext_resource path="res://audio/digital_sfx/source/zap1.ogg" type="AudioStream" id=58]
+[ext_resource path="res://audio/digital_sfx/source/zap2.ogg" type="AudioStream" id=59]
+[ext_resource path="res://audio/digital_sfx/source/zapThreeToneDown.ogg" type="AudioStream" id=60]
+[ext_resource path="res://audio/digital_sfx/source/zapThreeToneUp.ogg" type="AudioStream" id=61]
+[ext_resource path="res://audio/digital_sfx/source/zapTwoTone2.ogg" type="AudioStream" id=62]
+[ext_resource path="res://audio/digital_sfx/source/zapTwoTone.ogg" type="AudioStream" id=63]
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 2 )
+
+[sub_resource type="AudioStreamRandomPitch" id=4]
+audio_stream = ExtResource( 3 )
+
+[sub_resource type="AudioStreamRandomPitch" id=5]
+audio_stream = ExtResource( 4 )
+
+[sub_resource type="AudioStreamRandomPitch" id=6]
+audio_stream = ExtResource( 5 )
+
+[sub_resource type="AudioStreamRandomPitch" id=7]
+audio_stream = ExtResource( 6 )
+
+[sub_resource type="AudioStreamRandomPitch" id=8]
+audio_stream = ExtResource( 7 )
+
+[sub_resource type="AudioStreamRandomPitch" id=9]
+audio_stream = ExtResource( 8 )
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 9 )
+
+[sub_resource type="AudioStreamRandomPitch" id=10]
+audio_stream = ExtResource( 10 )
+
+[sub_resource type="AudioStreamRandomPitch" id=11]
+audio_stream = ExtResource( 11 )
+
+[sub_resource type="AudioStreamRandomPitch" id=12]
+audio_stream = ExtResource( 12 )
+
+[sub_resource type="AudioStreamRandomPitch" id=13]
+audio_stream = ExtResource( 13 )
+
+[sub_resource type="AudioStreamRandomPitch" id=14]
+audio_stream = ExtResource( 14 )
+
+[sub_resource type="AudioStreamRandomPitch" id=15]
+audio_stream = ExtResource( 15 )
+
+[sub_resource type="AudioStreamRandomPitch" id=16]
+audio_stream = ExtResource( 16 )
+
+[sub_resource type="AudioStreamRandomPitch" id=17]
+audio_stream = ExtResource( 17 )
+
+[sub_resource type="AudioStreamRandomPitch" id=18]
+audio_stream = ExtResource( 18 )
+
+[sub_resource type="AudioStreamRandomPitch" id=19]
+audio_stream = ExtResource( 19 )
+
+[sub_resource type="AudioStreamRandomPitch" id=20]
+audio_stream = ExtResource( 20 )
+
+[sub_resource type="AudioStreamRandomPitch" id=21]
+audio_stream = ExtResource( 21 )
+
+[sub_resource type="AudioStreamRandomPitch" id=22]
+audio_stream = ExtResource( 22 )
+
+[sub_resource type="AudioStreamRandomPitch" id=23]
+audio_stream = ExtResource( 23 )
+
+[sub_resource type="AudioStreamRandomPitch" id=24]
+audio_stream = ExtResource( 24 )
+
+[sub_resource type="AudioStreamRandomPitch" id=25]
+audio_stream = ExtResource( 25 )
+
+[sub_resource type="AudioStreamRandomPitch" id=26]
+audio_stream = ExtResource( 26 )
+
+[sub_resource type="AudioStreamRandomPitch" id=27]
+audio_stream = ExtResource( 27 )
+
+[sub_resource type="AudioStreamRandomPitch" id=28]
+audio_stream = ExtResource( 28 )
+
+[sub_resource type="AudioStreamRandomPitch" id=29]
+audio_stream = ExtResource( 29 )
+
+[sub_resource type="AudioStreamRandomPitch" id=30]
+audio_stream = ExtResource( 30 )
+
+[sub_resource type="AudioStreamRandomPitch" id=31]
+audio_stream = ExtResource( 31 )
+
+[sub_resource type="AudioStreamRandomPitch" id=32]
+audio_stream = ExtResource( 32 )
+
+[sub_resource type="AudioStreamRandomPitch" id=33]
+audio_stream = ExtResource( 33 )
+
+[sub_resource type="AudioStreamRandomPitch" id=34]
+audio_stream = ExtResource( 34 )
+
+[sub_resource type="AudioStreamRandomPitch" id=35]
+audio_stream = ExtResource( 35 )
+
+[sub_resource type="AudioStreamRandomPitch" id=36]
+audio_stream = ExtResource( 36 )
+
+[sub_resource type="AudioStreamRandomPitch" id=37]
+audio_stream = ExtResource( 37 )
+
+[sub_resource type="AudioStreamRandomPitch" id=38]
+audio_stream = ExtResource( 38 )
+
+[sub_resource type="AudioStreamRandomPitch" id=39]
+audio_stream = ExtResource( 39 )
+
+[sub_resource type="AudioStreamRandomPitch" id=40]
+audio_stream = ExtResource( 40 )
+
+[sub_resource type="AudioStreamRandomPitch" id=41]
+audio_stream = ExtResource( 41 )
+
+[sub_resource type="AudioStreamRandomPitch" id=42]
+audio_stream = ExtResource( 42 )
+
+[sub_resource type="AudioStreamRandomPitch" id=43]
+audio_stream = ExtResource( 43 )
+
+[sub_resource type="AudioStreamRandomPitch" id=44]
+audio_stream = ExtResource( 44 )
+
+[sub_resource type="AudioStreamRandomPitch" id=45]
+audio_stream = ExtResource( 45 )
+
+[sub_resource type="AudioStreamRandomPitch" id=46]
+audio_stream = ExtResource( 46 )
+
+[sub_resource type="AudioStreamRandomPitch" id=47]
+audio_stream = ExtResource( 47 )
+
+[sub_resource type="AudioStreamRandomPitch" id=48]
+audio_stream = ExtResource( 48 )
+
+[sub_resource type="AudioStreamRandomPitch" id=49]
+audio_stream = ExtResource( 49 )
+
+[sub_resource type="AudioStreamRandomPitch" id=50]
+audio_stream = ExtResource( 50 )
+
+[sub_resource type="AudioStreamRandomPitch" id=51]
+audio_stream = ExtResource( 51 )
+
+[sub_resource type="AudioStreamRandomPitch" id=52]
+audio_stream = ExtResource( 52 )
+
+[sub_resource type="AudioStreamRandomPitch" id=53]
+audio_stream = ExtResource( 53 )
+
+[sub_resource type="AudioStreamRandomPitch" id=54]
+audio_stream = ExtResource( 54 )
+
+[sub_resource type="AudioStreamRandomPitch" id=55]
+audio_stream = ExtResource( 55 )
+
+[sub_resource type="AudioStreamRandomPitch" id=56]
+audio_stream = ExtResource( 56 )
+
+[sub_resource type="AudioStreamRandomPitch" id=57]
+audio_stream = ExtResource( 57 )
+
+[sub_resource type="AudioStreamRandomPitch" id=58]
+audio_stream = ExtResource( 58 )
+
+[sub_resource type="AudioStreamRandomPitch" id=59]
+audio_stream = ExtResource( 59 )
+
+[sub_resource type="AudioStreamRandomPitch" id=60]
+audio_stream = ExtResource( 60 )
+
+[sub_resource type="AudioStreamRandomPitch" id=61]
+audio_stream = ExtResource( 61 )
+
+[sub_resource type="AudioStreamRandomPitch" id=62]
+audio_stream = ExtResource( 62 )
+
+[sub_resource type="AudioStreamRandomPitch" id=63]
+audio_stream = ExtResource( 63 )
+
+[node name="sfx" type="Node"]
+script = ExtResource( 1 )
+source_directory = "res://audio/digital_sfx/source"
+
+[node name="highDown" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+
+[node name="highUp" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 4 )
+
+[node name="laser1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 5 )
+
+[node name="laser2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 6 )
+
+[node name="laser3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 7 )
+
+[node name="laser4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 8 )
+
+[node name="laser5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 9 )
+
+[node name="laser6" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
+
+[node name="laser7" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 10 )
+
+[node name="laser8" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 11 )
+
+[node name="laser9" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 12 )
+
+[node name="lowDown" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 13 )
+
+[node name="lowRandom" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 14 )
+
+[node name="lowThreeTone" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 15 )
+
+[node name="pepSound1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 16 )
+
+[node name="pepSound2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 17 )
+
+[node name="pepSound3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 18 )
+
+[node name="pepSound4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 19 )
+
+[node name="pepSound5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 20 )
+
+[node name="phaseJump1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 21 )
+
+[node name="phaseJump2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 22 )
+
+[node name="phaseJump3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 23 )
+
+[node name="phaseJump4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 24 )
+
+[node name="phaseJump5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 25 )
+
+[node name="phaserDown1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 26 )
+
+[node name="phaserDown2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 27 )
+
+[node name="phaserDown3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 28 )
+
+[node name="phaserUp1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 29 )
+
+[node name="phaserUp2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 30 )
+
+[node name="phaserUp3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 31 )
+
+[node name="phaserUp4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 32 )
+
+[node name="phaserUp5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 33 )
+
+[node name="phaserUp6" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 34 )
+
+[node name="phaserUp7" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 35 )
+
+[node name="powerUp1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 36 )
+
+[node name="powerUp2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 37 )
+
+[node name="powerUp3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 38 )
+
+[node name="powerUp4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 39 )
+
+[node name="powerUp5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 40 )
+
+[node name="powerUp6" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 41 )
+
+[node name="powerUp7" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 42 )
+
+[node name="powerUp8" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 43 )
+
+[node name="powerUp9" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 44 )
+
+[node name="powerUp10" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 45 )
+
+[node name="powerUp11" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 46 )
+
+[node name="powerUp12" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 47 )
+
+[node name="spaceTrash1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 48 )
+
+[node name="spaceTrash2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 49 )
+
+[node name="spaceTrash3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 50 )
+
+[node name="spaceTrash4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 51 )
+
+[node name="spaceTrash5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 52 )
+
+[node name="threeTone1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 53 )
+
+[node name="threeTone2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 54 )
+
+[node name="tone1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 55 )
+
+[node name="twoTone1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 56 )
+
+[node name="twoTone2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 57 )
+
+[node name="zap1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 58 )
+
+[node name="zap2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 59 )
+
+[node name="zapThreeToneDown" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 60 )
+
+[node name="zapThreeToneUp" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 61 )
+
+[node name="zapTwoTone2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 62 )
+
+[node name="zapTwoTone" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 63 )

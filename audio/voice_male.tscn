@@ -1,0 +1,329 @@
+[gd_scene load_steps=94 format=2]
+
+[ext_resource path="res://audio/sfx_library.gd" type="Script" id=1]
+[ext_resource path="res://audio/voiceover_male/source/1.ogg" type="AudioStream" id=2]
+[ext_resource path="res://audio/voiceover_male/source/2.ogg" type="AudioStream" id=3]
+[ext_resource path="res://audio/voiceover_male/source/3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://audio/voiceover_male/source/4.ogg" type="AudioStream" id=5]
+[ext_resource path="res://audio/voiceover_male/source/5.ogg" type="AudioStream" id=6]
+[ext_resource path="res://audio/voiceover_male/source/6.ogg" type="AudioStream" id=7]
+[ext_resource path="res://audio/voiceover_male/source/7.ogg" type="AudioStream" id=8]
+[ext_resource path="res://audio/voiceover_male/source/8.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audio/voiceover_male/source/9.ogg" type="AudioStream" id=10]
+[ext_resource path="res://audio/voiceover_male/source/10.ogg" type="AudioStream" id=11]
+[ext_resource path="res://audio/voiceover_male/source/congratulations.ogg" type="AudioStream" id=12]
+[ext_resource path="res://audio/voiceover_male/source/correct.ogg" type="AudioStream" id=13]
+[ext_resource path="res://audio/voiceover_male/source/final_round.ogg" type="AudioStream" id=14]
+[ext_resource path="res://audio/voiceover_male/source/game_over.ogg" type="AudioStream" id=15]
+[ext_resource path="res://audio/voiceover_male/source/go.ogg" type="AudioStream" id=16]
+[ext_resource path="res://audio/voiceover_male/source/hold.ogg" type="AudioStream" id=17]
+[ext_resource path="res://audio/voiceover_male/source/hurry_up.ogg" type="AudioStream" id=18]
+[ext_resource path="res://audio/voiceover_male/source/its_a_tie.ogg" type="AudioStream" id=19]
+[ext_resource path="res://audio/voiceover_male/source/level.ogg" type="AudioStream" id=20]
+[ext_resource path="res://audio/voiceover_male/source/level_up.ogg" type="AudioStream" id=21]
+[ext_resource path="res://audio/voiceover_male/source/mission_completed.ogg" type="AudioStream" id=22]
+[ext_resource path="res://audio/voiceover_male/source/mission_failed.ogg" type="AudioStream" id=23]
+[ext_resource path="res://audio/voiceover_male/source/new_highscore.ogg" type="AudioStream" id=24]
+[ext_resource path="res://audio/voiceover_male/source/objective_achieved.ogg" type="AudioStream" id=25]
+[ext_resource path="res://audio/voiceover_male/source/power_up.ogg" type="AudioStream" id=26]
+[ext_resource path="res://audio/voiceover_male/source/ready.ogg" type="AudioStream" id=27]
+[ext_resource path="res://audio/voiceover_male/source/round.ogg" type="AudioStream" id=28]
+[ext_resource path="res://audio/voiceover_male/source/set.ogg" type="AudioStream" id=29]
+[ext_resource path="res://audio/voiceover_male/source/time_over.ogg" type="AudioStream" id=30]
+[ext_resource path="res://audio/voiceover_male/source/war_call_for_backup.ogg" type="AudioStream" id=31]
+[ext_resource path="res://audio/voiceover_male/source/war_cover_me.ogg" type="AudioStream" id=32]
+[ext_resource path="res://audio/voiceover_male/source/war_fire_in_the_hole.ogg" type="AudioStream" id=33]
+[ext_resource path="res://audio/voiceover_male/source/war_get_down.ogg" type="AudioStream" id=34]
+[ext_resource path="res://audio/voiceover_male/source/war_go_go_go.ogg" type="AudioStream" id=35]
+[ext_resource path="res://audio/voiceover_male/source/war_look_out.ogg" type="AudioStream" id=36]
+[ext_resource path="res://audio/voiceover_male/source/war_medic.ogg" type="AudioStream" id=37]
+[ext_resource path="res://audio/voiceover_male/source/war_reloading.ogg" type="AudioStream" id=38]
+[ext_resource path="res://audio/voiceover_male/source/war_rpg.ogg" type="AudioStream" id=39]
+[ext_resource path="res://audio/voiceover_male/source/war_sniper.ogg" type="AudioStream" id=40]
+[ext_resource path="res://audio/voiceover_male/source/war_suppressing_fire.ogg" type="AudioStream" id=41]
+[ext_resource path="res://audio/voiceover_male/source/war_target_destroyed.ogg" type="AudioStream" id=42]
+[ext_resource path="res://audio/voiceover_male/source/war_target_engaged.ogg" type="AudioStream" id=43]
+[ext_resource path="res://audio/voiceover_male/source/war_watch_my_back.ogg" type="AudioStream" id=44]
+[ext_resource path="res://audio/voiceover_male/source/wrong.ogg" type="AudioStream" id=45]
+[ext_resource path="res://audio/voiceover_male/source/you_lose.ogg" type="AudioStream" id=46]
+[ext_resource path="res://audio/voiceover_male/source/you_win.ogg" type="AudioStream" id=47]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 2 )
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 3 )
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 4 )
+
+[sub_resource type="AudioStreamRandomPitch" id=4]
+audio_stream = ExtResource( 5 )
+
+[sub_resource type="AudioStreamRandomPitch" id=5]
+audio_stream = ExtResource( 6 )
+
+[sub_resource type="AudioStreamRandomPitch" id=6]
+audio_stream = ExtResource( 7 )
+
+[sub_resource type="AudioStreamRandomPitch" id=7]
+audio_stream = ExtResource( 8 )
+
+[sub_resource type="AudioStreamRandomPitch" id=8]
+audio_stream = ExtResource( 9 )
+
+[sub_resource type="AudioStreamRandomPitch" id=9]
+audio_stream = ExtResource( 10 )
+
+[sub_resource type="AudioStreamRandomPitch" id=10]
+audio_stream = ExtResource( 11 )
+
+[sub_resource type="AudioStreamRandomPitch" id=11]
+audio_stream = ExtResource( 12 )
+
+[sub_resource type="AudioStreamRandomPitch" id=12]
+audio_stream = ExtResource( 13 )
+
+[sub_resource type="AudioStreamRandomPitch" id=13]
+audio_stream = ExtResource( 14 )
+
+[sub_resource type="AudioStreamRandomPitch" id=14]
+audio_stream = ExtResource( 15 )
+
+[sub_resource type="AudioStreamRandomPitch" id=15]
+audio_stream = ExtResource( 16 )
+
+[sub_resource type="AudioStreamRandomPitch" id=16]
+audio_stream = ExtResource( 17 )
+
+[sub_resource type="AudioStreamRandomPitch" id=17]
+audio_stream = ExtResource( 18 )
+
+[sub_resource type="AudioStreamRandomPitch" id=18]
+audio_stream = ExtResource( 19 )
+
+[sub_resource type="AudioStreamRandomPitch" id=19]
+audio_stream = ExtResource( 20 )
+
+[sub_resource type="AudioStreamRandomPitch" id=20]
+audio_stream = ExtResource( 21 )
+
+[sub_resource type="AudioStreamRandomPitch" id=21]
+audio_stream = ExtResource( 22 )
+
+[sub_resource type="AudioStreamRandomPitch" id=22]
+audio_stream = ExtResource( 23 )
+
+[sub_resource type="AudioStreamRandomPitch" id=23]
+audio_stream = ExtResource( 24 )
+
+[sub_resource type="AudioStreamRandomPitch" id=24]
+audio_stream = ExtResource( 25 )
+
+[sub_resource type="AudioStreamRandomPitch" id=25]
+audio_stream = ExtResource( 26 )
+
+[sub_resource type="AudioStreamRandomPitch" id=26]
+audio_stream = ExtResource( 27 )
+
+[sub_resource type="AudioStreamRandomPitch" id=27]
+audio_stream = ExtResource( 28 )
+
+[sub_resource type="AudioStreamRandomPitch" id=28]
+audio_stream = ExtResource( 29 )
+
+[sub_resource type="AudioStreamRandomPitch" id=29]
+audio_stream = ExtResource( 30 )
+
+[sub_resource type="AudioStreamRandomPitch" id=30]
+audio_stream = ExtResource( 31 )
+
+[sub_resource type="AudioStreamRandomPitch" id=31]
+audio_stream = ExtResource( 32 )
+
+[sub_resource type="AudioStreamRandomPitch" id=32]
+audio_stream = ExtResource( 33 )
+
+[sub_resource type="AudioStreamRandomPitch" id=33]
+audio_stream = ExtResource( 34 )
+
+[sub_resource type="AudioStreamRandomPitch" id=34]
+audio_stream = ExtResource( 35 )
+
+[sub_resource type="AudioStreamRandomPitch" id=35]
+audio_stream = ExtResource( 36 )
+
+[sub_resource type="AudioStreamRandomPitch" id=36]
+audio_stream = ExtResource( 37 )
+
+[sub_resource type="AudioStreamRandomPitch" id=37]
+audio_stream = ExtResource( 38 )
+
+[sub_resource type="AudioStreamRandomPitch" id=38]
+audio_stream = ExtResource( 39 )
+
+[sub_resource type="AudioStreamRandomPitch" id=39]
+audio_stream = ExtResource( 40 )
+
+[sub_resource type="AudioStreamRandomPitch" id=40]
+audio_stream = ExtResource( 41 )
+
+[sub_resource type="AudioStreamRandomPitch" id=41]
+audio_stream = ExtResource( 42 )
+
+[sub_resource type="AudioStreamRandomPitch" id=42]
+audio_stream = ExtResource( 43 )
+
+[sub_resource type="AudioStreamRandomPitch" id=43]
+audio_stream = ExtResource( 44 )
+
+[sub_resource type="AudioStreamRandomPitch" id=44]
+audio_stream = ExtResource( 45 )
+
+[sub_resource type="AudioStreamRandomPitch" id=45]
+audio_stream = ExtResource( 46 )
+
+[sub_resource type="AudioStreamRandomPitch" id=46]
+audio_stream = ExtResource( 47 )
+
+[node name="sfx" type="Node"]
+script = ExtResource( 1 )
+source_directory = "res://audio/voiceover_male/source"
+
+[node name="1" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 1 )
+
+[node name="2" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 2 )
+
+[node name="3" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+
+[node name="4" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 4 )
+
+[node name="5" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 5 )
+
+[node name="6" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 6 )
+
+[node name="7" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 7 )
+
+[node name="8" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 8 )
+
+[node name="9" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 9 )
+
+[node name="10" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 10 )
+
+[node name="congratulations" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 11 )
+
+[node name="correct" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 12 )
+
+[node name="final_round" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 13 )
+
+[node name="game_over" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 14 )
+
+[node name="go" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 15 )
+
+[node name="hold" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 16 )
+
+[node name="hurry_up" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 17 )
+
+[node name="its_a_tie" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 18 )
+
+[node name="level" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 19 )
+
+[node name="level_up" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 20 )
+
+[node name="mission_completed" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 21 )
+
+[node name="mission_failed" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 22 )
+
+[node name="new_highscore" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 23 )
+
+[node name="objective_achieved" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 24 )
+
+[node name="power_up" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 25 )
+
+[node name="ready" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 26 )
+
+[node name="round" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 27 )
+
+[node name="set" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 28 )
+
+[node name="time_over" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 29 )
+
+[node name="war_call_for_backup" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 30 )
+
+[node name="war_cover_me" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 31 )
+
+[node name="war_fire_in_the_hole" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 32 )
+
+[node name="war_get_down" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 33 )
+
+[node name="war_go_go_go" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 34 )
+
+[node name="war_look_out" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 35 )
+
+[node name="war_medic" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 36 )
+
+[node name="war_reloading" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 37 )
+
+[node name="war_rpg" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 38 )
+
+[node name="war_sniper" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 39 )
+
+[node name="war_suppressing_fire" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 40 )
+
+[node name="war_target_destroyed" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 41 )
+
+[node name="war_target_engaged" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 42 )
+
+[node name="war_watch_my_back" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 43 )
+
+[node name="wrong" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 44 )
+
+[node name="you_lose" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 45 )
+
+[node name="you_win" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 46 )

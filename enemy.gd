@@ -13,15 +13,12 @@ func _ready():
 	rotation = player.position.angle_to_point(position) 
 
 func _process(delta):
-
-
 	var d = player.position.angle_to_point(position) 
-
-	#if abs(Util.short_angle_dist(rotation, d))>0.4:
 	rotation = Util.rotate_toward(rotation, d, TURNING*delta)
-	#Util.lerp_angle(rotation, d, TURNING*delta)
-		
 	position += Vector2.RIGHT.rotated(rotation) * velocity * delta
+	
+	if position.distance_to(player.position) > 7000:
+		queue_free()
 	
 	if randf()<0.01:
 		var bullet = Bullet.instance()
@@ -33,10 +30,13 @@ func _process(delta):
 	
 
 func _on_enemy_area_entered(area):
+	$explosion.play()
 	$AnimationPlayer.play("fade")
 	$CollisionPolygon2D.queue_free()
 	$CPUParticles2D.emitting = true
 	$CPUParticles2D.show()
+	player.score += 1
+	get_node("../../HUD/score").text = str(player.score)
 	yield(get_tree().create_timer(1.0), "timeout")
 	hide()
 	queue_free()
