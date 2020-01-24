@@ -1,19 +1,12 @@
 extends Area2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 export var velocity = 1600
 export var turning = 4.0
 export var health = 10
 
-
 var Bullet = preload("res://player_bullet.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	if Input.is_action_pressed("ui_left"):
 		rotation -= turning * delta
 	if Input.is_action_pressed("ui_right"):
@@ -51,10 +44,9 @@ func hitFX():
 
 	
 func gamepad(delta):
-	var input = Vector2(Input.get_joy_axis(0, 0), Input.get_joy_axis(0, 1))
+	var input = Vector2(Input.get_joy_axis(0, 0), Input.get_joy_axis(0, 1)) + virtual_stick_direction
 	if input.length() > 0.2:
 		var direction = input.angle()
-		#rotation = Util.lerp_angle(rotation, direction, 4*get_process_delta_time() )
 		rotation = Util.rotate_toward(rotation, direction, turning * delta) 
 		
 
@@ -85,3 +77,30 @@ func laser(delta):
 	
 	charge = clamp(charge, 0.0, 3.0)
 	get_node("../HUD/charge").value = charge
+	
+	
+var virtual_stick_origin = Vector2.ZERO
+var virtual_stick_direction = Vector2.ZERO
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.position.x < get_viewport().size.x/2.0:
+			if event.pressed:
+				virtual_stick_origin = event.position
+				print("pressed")
+		else:
+			if event.pressed:
+				Input.action_press("ui_accept")
+			else:
+				Input.action_release("ui_accept")
+	elif event is InputEventScreenDrag and event.position.x < get_viewport().size.x/2.0:
+		#print(virtual_stick_origin, )
+		virtual_stick_direction =  (event.position - virtual_stick_origin).normalized()
+#		print(virtual_stick_direction)
+#		if virtual_stick_direction.length() > 2:
+#			rotation = Util.rotate_toward(rotation, virtual_stick_direction.angle(), turning * get_process_delta_time()) 
+	
+	
+	
+	
+	

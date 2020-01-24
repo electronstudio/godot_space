@@ -12,11 +12,10 @@
 [ext_resource path="res://enemy_spawner.gd" type="Script" id=10]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=11]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.2363, 313.249 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "laser"
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -90,7 +89,7 @@ collision_mask = 2
 position = Vector2( 1818.4, -0.301701 )
 rotation = 1.5708
 scale = Vector2( 2.13736, 5.30441 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="texture_laser" type="Sprite" parent="player/laser"]
 light_mask = 0
@@ -103,7 +102,7 @@ hframes = 4
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="player/laser/texture_laser"]
 autoplay = "laser"
-anims/laser = SubResource( 1 )
+anims/laser = SubResource( 2 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="player"]
 rotation = 3.14159
