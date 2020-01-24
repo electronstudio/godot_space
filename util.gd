@@ -2,9 +2,6 @@ extends Reference
 
 class_name Util
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 static func lerp_angle(from, to, weight):
     return from + short_angle_dist(from, to) * weight
 

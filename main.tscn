@@ -1,18 +1,19 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://backgrounds/stars_small_1024.png" type="Texture" id=1]
 [ext_resource path="res://backgrounds/stars_big_1024.png" type="Texture" id=2]
 [ext_resource path="res://backgrounds/stars.png" type="Texture" id=3]
 [ext_resource path="res://player.gd" type="Script" id=4]
-[ext_resource path="res://objects/texture_laser.png" type="Texture" id=5]
-[ext_resource path="res://objects/particles_fireball/0040.png" type="Texture" id=6]
-[ext_resource path="res://ships/redfighter.png" type="Texture" id=7]
-[ext_resource path="res://ships/redfighter_normal.png" type="Texture" id=8]
-[ext_resource path="res://audio/qubodup-crash.ogg" type="AudioStream" id=9]
-[ext_resource path="res://white.png" type="Texture" id=10]
-[ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=11]
-[ext_resource path="res://enemy_spawner.gd" type="Script" id=12]
-[ext_resource path="res://enemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://laser.gd" type="Script" id=5]
+[ext_resource path="res://objects/texture_laser.png" type="Texture" id=6]
+[ext_resource path="res://objects/particles_fireball/0040.png" type="Texture" id=7]
+[ext_resource path="res://ships/redfighter.png" type="Texture" id=8]
+[ext_resource path="res://ships/redfighter_normal.png" type="Texture" id=9]
+[ext_resource path="res://audio/qubodup-crash.ogg" type="AudioStream" id=10]
+[ext_resource path="res://white.png" type="Texture" id=11]
+[ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=12]
+[ext_resource path="res://enemy_spawner.gd" type="Script" id=13]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.2363, 313.249 )
@@ -86,6 +87,7 @@ script = ExtResource( 4 )
 visible = false
 position = Vector2( -60, 0 )
 collision_mask = 2
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/laser"]
 position = Vector2( 1818.4, -0.301701 )
@@ -98,7 +100,7 @@ light_mask = 0
 position = Vector2( 1818.4, 2.09485 )
 rotation = 1.5708
 scale = Vector2( 3.2794, 5.30441 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 vframes = 3
 hframes = 4
 
@@ -110,7 +112,7 @@ anims/laser = SubResource( 2 )
 rotation = 3.14159
 amount = 50
 local_coords = false
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 spread = 31.74
 gravity = Vector2( 0, 0 )
 initial_velocity = 431.05
@@ -137,8 +139,8 @@ editor_draw_drag_margin = true
 
 [node name="redfighter" type="Sprite" parent="player"]
 position = Vector2( 0, 1.5 )
-texture = ExtResource( 7 )
-normal_map = ExtResource( 8 )
+texture = ExtResource( 8 )
+normal_map = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
 visible = false
@@ -146,14 +148,14 @@ position = Vector2( 0, 1.5 )
 polygon = PoolVector2Array( -14.5, -165.2, -14.5, -161.7, 26.5, -123.7, 26.5, -109.5, 21.3, -111.3, 21.5, -108.5, 21.5, -106.2, 22.8, -104.7, 21.5, -103.6, -19.6, -67.5, -25, -67.5, -34.1, -69.4, -34.6, -66.5, -22, -66.5, 2.5, -50.2, 2.5, -44.8, 40.5, -58.7, 40.5, -54.3, 87.1, -41.5, 93.2, -41.5, 117.5, -42.8, 117.5, -39.6, 158.5, -18.6, 158.5, -13.5, 160.3, -1.5, 149.4, -1.5, 140.5, -5.5, 140.5, -3, 142.1, 4.8, 149.4, 1.5, 159.5, 1.5, 159.5, 18.5, 154.8, 18.5, 113.9, 42.5, 96.2, 42.5, 36.1, 56.5, 32.6, 56.5, 3.2, 46.1, 1.10001, 52.5, -1.89999, 52.5, -21.9, 66.5, -35.1, 66.5, -34.9, 68.5, -15.5, 68.5, -15.5, 72.1, 26.5, 106.1, 26.5, 118.4, 22, 117.7, 22.5, 119.5, 22.5, 120.5, 25, 123.1, -19.5, 166.5, -28.3, 166.5, -61.5, 167.7, -61.5, 164.5, -85.5, 151.5, -85.5, 143.5, -84.9, 142.2, -182.5, 133.1, -182.5, 107.5, -175.1, 107.5, -114.2, 90.5, -106.1, 90.5, -87.9, 93.1, -81, 88.1, -97, 66.5, -104.6, 66.5, -141.5, 65.3, -141.5, 61.8, -154.4, 50.5, -160, 50.5, -184.5, 45.6, -184.5, 36.3, -172.6, 12.5, -169.1, 12.5, -165.5, 12.1, -165.5, -11.5, -171.4, -11.5, -189.1, -42.5, -180.4, -42.5, -154.7, -50.5, -138.5, -65.5, -110.8, -65.5, -98.7, -66.3, -81.7, -88.4, -87.4, -93.5, -118.5, -89.9, -118.5, -92.6, -182.5, -108.6, -182.5, -113.5, -185.3, -131.5, -179.1, -131.5, -124, -143.5, -119.4, -143.5, -84.4, -142.6, -86.6, -153.5, -79.8, -153.5, -61.5, -164.3, -61.5, -167.8 )
 
 [node name="crash_sound" type="AudioStreamPlayer" parent="player"]
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Light2D" type="Light2D" parent="HUD"]
 position = Vector2( 10, -110 )
 scale = Vector2( 49.5911, 49.6228 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 energy = 5.0
 range_item_cull_mask = 3
 shadow_color = Color( 0, 0, 0, 1 )
@@ -184,12 +186,12 @@ margin_left = 10.0
 margin_top = 1040.0
 margin_right = 50.0
 margin_bottom = 1076.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 12 )
 text = "0"
 
 [node name="enemy_spawner" type="Timer" parent="."]
 autostart = true
-script = ExtResource( 12 )
-Enemy = ExtResource( 13 )
+script = ExtResource( 13 )
+Enemy = ExtResource( 14 )
 [connection signal="area_entered" from="player" to="player" method="_on_player_area_entered"]
 [connection signal="timeout" from="enemy_spawner" to="enemy_spawner" method="_on_enemy_spawner_timeout"]

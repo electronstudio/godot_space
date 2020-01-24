@@ -4,10 +4,10 @@
 [ext_resource path="res://objects/bullet.png" type="Texture" id=2]
 [ext_resource path="res://audio/digital_sfx/source/laser1.ogg" type="AudioStream" id=3]
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=1]
 radius = 57.3321
 
-[sub_resource type="AudioStreamRandomPitch" id=5]
+[sub_resource type="AudioStreamRandomPitch" id=2]
 audio_stream = ExtResource( 3 )
 
 [node name="Node2D" type="Area2D"]
@@ -24,9 +24,9 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 20, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
-stream = SubResource( 5 )
+stream = SubResource( 2 )
 volume_db = -17.829
 [connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]

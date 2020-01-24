@@ -1,7 +1,6 @@
 extends Area2D
 
-var velocity = 4000
-
+var velocity 
 onready var player = get_node("/root/main/player")
 
 func _ready():
@@ -15,3 +14,9 @@ func _process(delta):
 
 func _on_bullet_area_entered(area):
 	queue_free()
+
+func init(parent, vel):
+		position = parent.position
+		rotation = parent.rotation
+		velocity = vel
+		parent.get_node("/root/main/bullets").add_child(self)
