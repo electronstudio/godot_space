@@ -29,7 +29,7 @@ func _on_enemy_area_entered(area):
 	$CPUParticles2D.emitting = true
 	$CPUParticles2D.show()
 	player.score += 1
-	get_node("../../HUD/score").text = str(player.score)
+	get_node("/root/main/HUD/score").text = str(player.score)
 	yield(get_tree().create_timer(1.0), "timeout")
 	queue_free()
 	
