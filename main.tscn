@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://backgrounds/stars_small_1024.png" type="Texture" id=1]
 [ext_resource path="res://backgrounds/stars_big_1024.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=12]
 [ext_resource path="res://enemy_spawner.gd" type="Script" id=13]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=14]
+[ext_resource path="res://enemy_fast.tscn" type="PackedScene" id=15]
+[ext_resource path="res://enemy_static.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.2363, 313.249 )
@@ -193,5 +195,23 @@ text = "0"
 autostart = true
 script = ExtResource( 13 )
 Enemy = ExtResource( 14 )
+MAX_ENEMIES = 5
+MIN_SCORE = 5
+
+[node name="enemy_spawner2" type="Timer" parent="."]
+autostart = true
+script = ExtResource( 13 )
+Enemy = ExtResource( 15 )
+MAX_ENEMIES = 3
+MIN_SCORE = 15
+
+[node name="enemy_spawner3" type="Timer" parent="."]
+autostart = true
+script = ExtResource( 13 )
+Enemy = ExtResource( 16 )
+MAX_ENEMIES = 40
+MAX_SCORE = 5
 [connection signal="area_entered" from="player" to="player" method="_on_player_area_entered"]
 [connection signal="timeout" from="enemy_spawner" to="enemy_spawner" method="_on_enemy_spawner_timeout"]
+[connection signal="timeout" from="enemy_spawner2" to="enemy_spawner2" method="_on_enemy_spawner_timeout"]
+[connection signal="timeout" from="enemy_spawner3" to="enemy_spawner3" method="_on_enemy_spawner_timeout"]
