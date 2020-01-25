@@ -7,4 +7,9 @@ Play online at https://electronstudio.github.io/godot_space/
 
 Graphics
 
+Bonsaiheldin | http://bonsaiheld.org https://opengameart.org/content/stars-parallax-backgrounds
+
+http://millionthvector.blogspot.com/
+
 Sound:
+
