@@ -31,17 +31,15 @@ func hitFX():
 	yield(get_tree().create_timer(1.0), "timeout")
 	modulate = Color(1, 1, 1, 255)
 	
+var virtual_stick_direction = Vector2.ZERO
+
 func gamepad(delta):
 	var input = Vector2(Input.get_joy_axis(0, 0), Input.get_joy_axis(0, 1)) + virtual_stick_direction
 	if input.length() > 0.2:
 		var direction = input.angle()
 		rotation = Util.rotate_toward(rotation, direction, turning * delta) 
 		
-
-
-	
 var virtual_stick_origin = Vector2.ZERO
-var virtual_stick_direction = Vector2.ZERO
 
 func _input(event):
 	if event is InputEventScreenTouch:
