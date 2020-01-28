@@ -135,10 +135,10 @@ shadow_color = Color( 0, 0, 0, 1 )
 shadow_gradient_length = 289.6
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HUD"]
-margin_left = 28.0
-margin_top = 50.0
-margin_right = 780.0
-margin_bottom = 690.0
+margin_left = 200.0
+margin_top = 180.0
+margin_right = 952.0
+margin_bottom = 820.0
 custom_fonts/normal_font = ExtResource( 10 )
 custom_colors/default_color = Color( 0.0117647, 1, 0, 1 )
 bbcode_enabled = true
@@ -166,35 +166,35 @@ hold fire for charge
 "
 
 [node name="Label" type="Label" parent="HUD"]
-margin_left = 180.0
-margin_top = 500.0
-margin_right = 415.0
-margin_bottom = 536.0
+margin_left = 352.0
+margin_top = 630.0
+margin_right = 614.0
+margin_bottom = 705.0
 custom_fonts/font = ExtResource( 10 )
 text = "LAST SCORE:
 "
 
 [node name="lastscore" type="Label" parent="HUD"]
-margin_left = 480.0
-margin_top = 500.0
-margin_right = 777.0
-margin_bottom = 536.0
+margin_left = 652.0
+margin_top = 630.0
+margin_right = 949.0
+margin_bottom = 666.0
 custom_fonts/font = ExtResource( 10 )
 text = "0"
 
 [node name="highscore" type="Label" parent="HUD"]
-margin_left = 480.0
-margin_top = 570.0
-margin_right = 777.0
-margin_bottom = 606.0
+margin_left = 652.0
+margin_top = 700.0
+margin_right = 949.0
+margin_bottom = 736.0
 custom_fonts/font = ExtResource( 10 )
 text = "0"
 
 [node name="Label2" type="Label" parent="HUD"]
-margin_left = 170.0
-margin_top = 570.0
-margin_right = 451.0
-margin_bottom = 606.0
+margin_left = 342.0
+margin_top = 700.0
+margin_right = 623.0
+margin_bottom = 736.0
 custom_fonts/font = ExtResource( 10 )
 text = "HIGH SCORE:"
 [connection signal="area_entered" from="player" to="player" method="_on_player_area_entered"]

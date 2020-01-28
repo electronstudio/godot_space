@@ -116,7 +116,7 @@ hue_variation = 0.01
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
-zoom = Vector2( 6, 6 )
+zoom = Vector2( 4, 4 )
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 smoothing_enabled = true
@@ -219,9 +219,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_top = -361.0
-margin_right = 50.0
-margin_bottom = -325.0
+margin_left = -20.0
+margin_top = -540.0
+margin_right = 30.0
+margin_bottom = -504.0
 custom_fonts/font = ExtResource( 15 )
 text = "0"
 [connection signal="area_entered" from="player" to="player" method="_on_player_area_entered"]
