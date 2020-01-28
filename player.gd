@@ -22,8 +22,13 @@ func _on_player_area_entered(area):
 	health -= 1
 	get_node("../HUD/health").value = health
 	if health <= 0:
-		get_tree().reload_current_scene()
+		Global.last_score = score
+		Global.high_score = max(Global.high_score, score)
+		hide()
+		yield(get_tree().create_timer(4.0), "timeout")
+		get_tree().change_scene("res://title.tscn")
 	hitFX()
+
 
 func hitFX():
 	$crash_sound.play()

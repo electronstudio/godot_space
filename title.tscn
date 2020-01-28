@@ -1,0 +1,200 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://title.gd" type="Script" id=1]
+[ext_resource path="res://backgrounds/stars_small_1024.png" type="Texture" id=2]
+[ext_resource path="res://backgrounds/stars_big_1024.png" type="Texture" id=3]
+[ext_resource path="res://objects/texture_laser.png" type="Texture" id=4]
+[ext_resource path="res://objects/particles_fireball/0040.png" type="Texture" id=5]
+[ext_resource path="res://ships/redfighter.png" type="Texture" id=6]
+[ext_resource path="res://ships/redfighter_normal.png" type="Texture" id=7]
+[ext_resource path="res://audio/qubodup-crash.ogg" type="AudioStream" id=8]
+[ext_resource path="res://white.png" type="Texture" id=9]
+[ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.2363, 313.249 )
+
+[sub_resource type="Animation" id=2]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 11 ]
+}
+
+[node name="title" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+motion_mirroring = Vector2( 4096, 4096 )
+
+[node name="stars_small_1024" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 4096, 4096 )
+
+[node name="stars_big_1024" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="bullets" type="Node2D" parent="."]
+
+[node name="player" type="Area2D" parent="."]
+light_mask = 3
+position = Vector2( 0, -1.5 )
+collision_mask = 2
+
+[node name="laser" type="Area2D" parent="player"]
+visible = false
+position = Vector2( -60, 0 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/laser"]
+position = Vector2( 1818.4, -0.301701 )
+rotation = 1.5708
+scale = Vector2( 2.13736, 5.30441 )
+shape = SubResource( 1 )
+
+[node name="texture_laser" type="Sprite" parent="player/laser"]
+editor/display_folded = true
+light_mask = 0
+position = Vector2( 1818.4, 2.09485 )
+rotation = 1.5708
+scale = Vector2( 3.2794, 5.30441 )
+texture = ExtResource( 4 )
+vframes = 3
+hframes = 4
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="player/laser/texture_laser"]
+autoplay = "laser"
+anims/laser = SubResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="player"]
+visible = false
+rotation = 3.14159
+amount = 50
+local_coords = false
+texture = ExtResource( 5 )
+spread = 31.74
+gravity = Vector2( 0, 0 )
+initial_velocity = 431.05
+initial_velocity_random = 0.33
+angular_velocity = 469.9
+angular_velocity_random = 1.0
+linear_accel = -100.0
+scale_amount = 0.5
+color = Color( 1, 0.333333, 0.333333, 1 )
+hue_variation = 0.01
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="redfighter" type="Sprite" parent="player"]
+position = Vector2( 0, 1.5 )
+texture = ExtResource( 6 )
+normal_map = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
+visible = false
+position = Vector2( 0, 1.5 )
+polygon = PoolVector2Array( -14.5, -165.2, -14.5, -161.7, 26.5, -123.7, 26.5, -109.5, 21.3, -111.3, 21.5, -108.5, 21.5, -106.2, 22.8, -104.7, 21.5, -103.6, -19.6, -67.5, -25, -67.5, -34.1, -69.4, -34.6, -66.5, -22, -66.5, 2.5, -50.2, 2.5, -44.8, 40.5, -58.7, 40.5, -54.3, 87.1, -41.5, 93.2, -41.5, 117.5, -42.8, 117.5, -39.6, 158.5, -18.6, 158.5, -13.5, 160.3, -1.5, 149.4, -1.5, 140.5, -5.5, 140.5, -3, 142.1, 4.8, 149.4, 1.5, 159.5, 1.5, 159.5, 18.5, 154.8, 18.5, 113.9, 42.5, 96.2, 42.5, 36.1, 56.5, 32.6, 56.5, 3.2, 46.1, 1.10001, 52.5, -1.89999, 52.5, -21.9, 66.5, -35.1, 66.5, -34.9, 68.5, -15.5, 68.5, -15.5, 72.1, 26.5, 106.1, 26.5, 118.4, 22, 117.7, 22.5, 119.5, 22.5, 120.5, 25, 123.1, -19.5, 166.5, -28.3, 166.5, -61.5, 167.7, -61.5, 164.5, -85.5, 151.5, -85.5, 143.5, -84.9, 142.2, -182.5, 133.1, -182.5, 107.5, -175.1, 107.5, -114.2, 90.5, -106.1, 90.5, -87.9, 93.1, -81, 88.1, -97, 66.5, -104.6, 66.5, -141.5, 65.3, -141.5, 61.8, -154.4, 50.5, -160, 50.5, -184.5, 45.6, -184.5, 36.3, -172.6, 12.5, -169.1, 12.5, -165.5, 12.1, -165.5, -11.5, -171.4, -11.5, -189.1, -42.5, -180.4, -42.5, -154.7, -50.5, -138.5, -65.5, -110.8, -65.5, -98.7, -66.3, -81.7, -88.4, -87.4, -93.5, -118.5, -89.9, -118.5, -92.6, -182.5, -108.6, -182.5, -113.5, -185.3, -131.5, -179.1, -131.5, -124, -143.5, -119.4, -143.5, -84.4, -142.6, -86.6, -153.5, -79.8, -153.5, -61.5, -164.3, -61.5, -167.8 )
+
+[node name="crash_sound" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource( 8 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Light2D" type="Light2D" parent="HUD"]
+position = Vector2( 5120, 5120 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 9 )
+energy = 5.0
+range_item_cull_mask = 3
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_gradient_length = 289.6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD"]
+margin_left = 28.0
+margin_top = 50.0
+margin_right = 780.0
+margin_bottom = 690.0
+custom_fonts/normal_font = ExtResource( 10 )
+custom_colors/default_color = Color( 0.0117647, 1, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+GODOT SPACE
+
+touch screen controls
+left thumb: virtual joystick 
+right thumb: fire
+
+or cursor keys or joypad
+
+hold fire for charge
+[/center]"
+text = "
+GODOT SPACE
+
+touch screen controls
+left thumb: virtual joystick 
+right thumb: fire
+
+or cursor keys or joypad
+
+hold fire for charge
+"
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 180.0
+margin_top = 500.0
+margin_right = 415.0
+margin_bottom = 536.0
+custom_fonts/font = ExtResource( 10 )
+text = "LAST SCORE:
+"
+
+[node name="lastscore" type="Label" parent="HUD"]
+margin_left = 480.0
+margin_top = 500.0
+margin_right = 777.0
+margin_bottom = 536.0
+custom_fonts/font = ExtResource( 10 )
+text = "0"
+
+[node name="highscore" type="Label" parent="HUD"]
+margin_left = 480.0
+margin_top = 570.0
+margin_right = 777.0
+margin_bottom = 606.0
+custom_fonts/font = ExtResource( 10 )
+text = "0"
+
+[node name="Label2" type="Label" parent="HUD"]
+margin_left = 170.0
+margin_top = 570.0
+margin_right = 451.0
+margin_bottom = 606.0
+custom_fonts/font = ExtResource( 10 )
+text = "HIGH SCORE:"
+[connection signal="area_entered" from="player" to="player" method="_on_player_area_entered"]

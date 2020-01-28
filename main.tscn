@@ -10,9 +10,9 @@
 [ext_resource path="res://ships/redfighter_normal.png" type="Texture" id=8]
 [ext_resource path="res://audio/qubodup-crash.ogg" type="AudioStream" id=9]
 [ext_resource path="res://enemy_spawner.gd" type="Script" id=10]
-[ext_resource path="res://enemy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://enemy_fast.tscn" type="PackedScene" id=12]
-[ext_resource path="res://enemy_static.tscn" type="PackedScene" id=13]
+[ext_resource path="res://enemy_static.tscn" type="PackedScene" id=11]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://enemy_fast.tscn" type="PackedScene" id=13]
 [ext_resource path="res://white.png" type="Texture" id=14]
 [ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=15]
 
@@ -141,28 +141,46 @@ polygon = PoolVector2Array( -14.5, -165.2, -14.5, -161.7, 26.5, -123.7, 26.5, -1
 stream = ExtResource( 9 )
 
 [node name="enemies" type="Node2D" parent="."]
-editor/display_folded = true
 
-[node name="enemy_spawner" type="Timer" parent="enemies"]
+[node name="static_enemy_spawner" type="Timer" parent="enemies"]
+wait_time = 0.1
 autostart = true
 script = ExtResource( 10 )
 Enemy = ExtResource( 11 )
+MAX_ENEMIES = 40
+MAX_SCORE = 5
+
+[node name="enemy_spawner" type="Timer" parent="enemies"]
+wait_time = 2.0
+autostart = true
+script = ExtResource( 10 )
+Enemy = ExtResource( 12 )
 MAX_ENEMIES = 5
 MIN_SCORE = 5
 
 [node name="fast_enemy_spawner" type="Timer" parent="enemies"]
+wait_time = 3.0
+autostart = true
+script = ExtResource( 10 )
+Enemy = ExtResource( 13 )
+MAX_ENEMIES = 1
+MIN_SCORE = 15
+
+[node name="enemy_spawner2" type="Timer" parent="enemies"]
+wait_time = 2.0
 autostart = true
 script = ExtResource( 10 )
 Enemy = ExtResource( 12 )
 MAX_ENEMIES = 3
-MIN_SCORE = 15
+MIN_SCORE = 20
 
-[node name="static_enemy_spawner" type="Timer" parent="enemies"]
+[node name="fast_enemy_spawner2" type="Timer" parent="enemies"]
+wait_time = 3.0
 autostart = true
 script = ExtResource( 10 )
 Enemy = ExtResource( 13 )
-MAX_ENEMIES = 40
-MAX_SCORE = 5
+MAX_ENEMIES = 1
+MIN_SCORE = 30
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -207,6 +225,8 @@ margin_bottom = -325.0
 custom_fonts/font = ExtResource( 15 )
 text = "0"
 [connection signal="area_entered" from="player" to="player" method="_on_player_area_entered"]
+[connection signal="timeout" from="enemies/static_enemy_spawner" to="enemies/static_enemy_spawner" method="_on_enemy_spawner_timeout"]
 [connection signal="timeout" from="enemies/enemy_spawner" to="enemies/enemy_spawner" method="_on_enemy_spawner_timeout"]
 [connection signal="timeout" from="enemies/fast_enemy_spawner" to="enemies/fast_enemy_spawner" method="_on_enemy_spawner_timeout"]
-[connection signal="timeout" from="enemies/static_enemy_spawner" to="enemies/static_enemy_spawner" method="_on_enemy_spawner_timeout"]
+[connection signal="timeout" from="enemies/enemy_spawner2" to="enemies/enemy_spawner2" method="_on_enemy_spawner_timeout"]
+[connection signal="timeout" from="enemies/fast_enemy_spawner2" to="enemies/fast_enemy_spawner2" method="_on_enemy_spawner_timeout"]
