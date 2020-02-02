@@ -75,5 +75,3 @@ anim_speed = 1.0
 [node name="explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 [connection signal="area_entered" from="." to="." method="_on_enemy_area_entered"]
-[connection signal="area_shape_entered" from="." to="." method="_on_enemy_area_shape_entered"]
-[connection signal="body_entered" from="." to="." method="_on_enemy_body_entered"]
