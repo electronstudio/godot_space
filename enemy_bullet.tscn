@@ -10,7 +10,7 @@ radius = 57.3321
 [sub_resource type="AudioStreamRandomPitch" id=2]
 audio_stream = ExtResource( 3 )
 
-[node name="Node2D" type="Area2D"]
+[node name="bullet" type="Area2D"]
 light_mask = 4
 collision_layer = 2
 script = ExtResource( 1 )
@@ -29,4 +29,3 @@ shape = SubResource( 1 )
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = SubResource( 2 )
 volume_db = -17.829
-[connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]

@@ -30,4 +30,3 @@ shape = SubResource( 1 )
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = SubResource( 2 )
-[connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]
