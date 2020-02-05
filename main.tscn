@@ -10,12 +10,12 @@
 [ext_resource path="res://white.png" type="Texture" id=8]
 [ext_resource path="res://interface/fonts/kenvector_future_32.tres" type="DynamicFont" id=9]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.054902, 1, 0, 1 )
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 0, 0, 1 )
 
 [node name="main" type="Node2D"]
@@ -60,19 +60,6 @@ scale_amount = 0.5
 color = Color( 1, 0.333333, 0.333333, 1 )
 hue_variation = 0.01
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-current = true
-zoom = Vector2( 6, 6 )
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
-smoothing_enabled = true
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-editor_draw_limits = true
-editor_draw_drag_margin = true
-
 [node name="redfighter" type="Sprite" parent="player"]
 position = Vector2( 0, 1.5 )
 texture = ExtResource( 4 )
@@ -105,8 +92,8 @@ shadow_gradient_length = 289.6
 [node name="charge" type="ProgressBar" parent="HUD"]
 margin_right = 630.0
 margin_bottom = 30.0
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
 max_value = 3.0
 value = 3.0
 percent_visible = false
@@ -116,8 +103,8 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -580.0
 margin_bottom = 30.0
-custom_styles/fg = SubResource( 5 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 2 )
 max_value = 10.0
 step = 1.0
 value = 10.0
@@ -133,4 +120,3 @@ margin_right = 50.0
 margin_bottom = -325.0
 custom_fonts/font = ExtResource( 9 )
 text = "0"
-[connection signal="area_entered" from="player" to="player" method="_on_player_area_entered"]

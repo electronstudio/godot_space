@@ -1,6 +1,6 @@
 extends Area2D
 
-export var velocity = 1600
+export var velocity = 0
 export var turning = 4.0
 export var health = 10
 
@@ -20,4 +20,3 @@ func _process(delta):
 	
 func gamepad(delta):
 	pass
-		
