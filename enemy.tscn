@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://enemy.gd" type="Script" id=1]
-[ext_resource path="res://ships/Faction10-Spaceships-by-MillionthVector/destroyer.png" type="Texture" id=2]
-[ext_resource path="res://ships/Faction10-Spaceships-by-MillionthVector/destroyer_normal.png" type="Texture" id=3]
-[ext_resource path="res://objects/sparkling-fireball-small.png" type="Texture" id=4]
-[ext_resource path="res://audio/explosion.wav" type="AudioStream" id=5]
+[ext_resource path="res://ships/Faction10-Spaceships-by-MillionthVector/destroyer.png" type="Texture" id=1]
+[ext_resource path="res://ships/Faction10-Spaceships-by-MillionthVector/destroyer_normal.png" type="Texture" id=2]
+[ext_resource path="res://objects/sparkling-fireball-small.png" type="Texture" id=3]
+[ext_resource path="res://audio/explosion.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -35,7 +34,6 @@ _data = [ Vector2( 0.0079561, 200 ), 0.0, 0.0, 0, 0, Vector2( 0.525052, -200 ), 
 [node name="enemy" type="Area2D"]
 position = Vector2( 0.801025, -0.809296 )
 collision_layer = 2
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -45,8 +43,8 @@ anims/fade = SubResource( 1 )
 
 [node name="destroyer" type="Sprite" parent="."]
 position = Vector2( -0.252319, 12.4932 )
-texture = ExtResource( 2 )
-normal_map = ExtResource( 3 )
+texture = ExtResource( 1 )
+normal_map = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -0.252014, 12.494 )
@@ -60,7 +58,7 @@ amount = 50
 one_shot = true
 preprocess = 0.3
 fixed_fps = 50
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
 initial_velocity = 483.67
@@ -73,5 +71,4 @@ hue_variation_random = 0.44
 anim_speed = 1.0
 
 [node name="explosion" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
-[connection signal="area_entered" from="." to="." method="_on_enemy_area_entered"]
+stream = ExtResource( 4 )

@@ -76,7 +76,7 @@ stream = ExtResource( 6 )
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy" parent="enemies" instance=ExtResource( 7 )]
-position = Vector2( 5550.59, 642.208 )
+position = Vector2( 730.275, 278.006 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
