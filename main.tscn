@@ -43,8 +43,10 @@ __meta__ = {
 }
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="player"]
+position = Vector2( -100.306, 10.4972 )
 rotation = 3.14159
-amount = 50
+emitting = false
+amount = 1
 local_coords = false
 texture = ExtResource( 3 )
 spread = 31.74
