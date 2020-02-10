@@ -23,13 +23,19 @@ We need a camera to track the player.  Add a `Camera2D` node to the `player` nod
    
 We would like to add another layer to the scrolling background.
 1. Add another `ParallaxLayer` node to the `ParallaxBackground` node.
+
 2. Click on the `ParallaxLayer2`.
+
 3. In the node inspector, set:
     * Motion: Mirroring x: 15360
     * Motion: Mirroring y: 15360
+    
 3. Find `backgrounds/stars_big_1024.png` in the filesystem (Bottom left of screen).
+
 4. Drag into the scene in the centre of the screen.
+
 5. Click on the `stars_big_1024` sprite node.
+
 6. In the node inspector, under `Node2D` `Transform` set:
     * Position x: 7680
     * Position y: 7680
