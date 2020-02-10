@@ -1,7 +1,8 @@
-# godot_space
-Example space shooter game for coderdojo
+# Godot space shooter tutorial
 
-Play online at https://electronstudio.github.io/godot_space/
+Do the tutorial: https://electronstudio.github.io/godot_space/tutorial
+
+Play the finished game: https://electronstudio.github.io/godot_space/
 
 # Credits
 
