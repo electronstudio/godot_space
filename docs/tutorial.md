@@ -1,15 +1,21 @@
+---
+title: "Space Shooter Tutorial"
+listings-no-page-break: true
+book: true
+---
 # Space Shooter Tutorial
 
 Download the [starter project](godot_space1.zip).  Import it into Godot.  Run the game.  You should have a spaceship sprite that can turn left and right.
 There is also lighting and a HUD.
 
-## 1. Velocity 
+## Velocity 
 
 Change the `velocity` of the `player` to 1600 in the node inspector.  Run the game.
 
-## 2. Camera
+## Camera
 
 We need a camera to track the player.  Add a `Camera2D` node to the `player` node.  In the node inspector set:
+
 * Current: On
 * Zoom x: 6
 * Zoom y: 6
@@ -19,9 +25,10 @@ We need a camera to track the player.  Add a `Camera2D` node to the `player` nod
     * Top: 0
     * Bottom: 0
         
-## 3. Background
+## Background
    
 We would like to add another layer to the scrolling background.
+
 1. Add another `ParallaxLayer` node to the `ParallaxBackground` node.
 
 2. Click on the `ParallaxLayer2`.
@@ -44,13 +51,15 @@ We would like to add another layer to the scrolling background.
 
 Run the game to verify it works.
 
-## 4. Particle effect
+## Particle effect
 
 The player already has a `CPUParticles2D` node made for you.  Click on it.  In node inspector:
+
 * Emitting: On
 * Amount: 50
 
 Experiment with changing these settings.  What do they do?
+
 * Lifetime
 * Spread
 * Gravity
@@ -59,7 +68,7 @@ Experiment with changing these settings.  What do they do?
 * Anything else you like
 
 
-## 5. Make enemy move
+## Make enemy move
 
 Open the `enemy.tscn` scene file by double clicking it.
 
@@ -87,7 +96,7 @@ func _process(delta):
 		Bullet.instance().init(self, 3000)
 ```
 
-## 6. Add more enemies
+## Add more enemies
 
 NOTE: The `Light2D` node under `HUD` covers the whole screen with an invisible object (the light) and that makes it difficult to select other sprites because you
 always accidently select the light.  I suggest you click the eye icon next to `Light2D` to hide it. But don't forget to unhide it once you have
@@ -99,7 +108,7 @@ Also try changing `Node2D` `Transform` `Rotation`.
 
 Test the game again.
 
-## 7. Make bullets move
+## Make bullets move
 
 Try pressing space to shoot bullets.  What happens?
 
@@ -116,7 +125,7 @@ func _process(delta):
 
 Test the game again.
 
-## 8. Make bullets collide
+## Make bullets collide
 
 1. Open the `player_bullet.tscn` scene file by double clicking it.
 
@@ -142,7 +151,7 @@ func _on_bullet_area_entered(area):
 8. Test the game again.
 
 
-## 9. Make enemy collide
+## Make enemy collide
 
 1. Open the `enemy.tscn` scene file by double clicking it.
 
@@ -173,7 +182,7 @@ func _on_enemy_area_entered(area):
 
 Test the game again.
 
-# 10. Make player collide
+## Make player collide
 
 1. Go back to the `main.tscn` scene (should be open as a tab).
 
@@ -205,7 +214,7 @@ Test the game again.
 
 
 
-# Optional - Gamepad controls
+## Optional - Gamepad controls
 
 Open `player.gd` script.  Delete the `gamepad` function and replace it with this:
 
