@@ -81,6 +81,7 @@ In the node inspector set:
 
 *What happens if you change these values?*
         
+
 ## Background
    
 We would like to add another layer to the scrolling background.
