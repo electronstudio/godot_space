@@ -2,6 +2,8 @@
 
 Do the tutorial: https://electronstudio.github.io/godot_space/tutorial
 
+Print the tutorial: https://electronstudio.github.io/godot_space/tutorial.pdf
+
 Play the finished game: https://electronstudio.github.io/godot_space/
 
 # Credits
@@ -16,8 +18,3 @@ Sound:
 
 https://opengameart.org/content/explosion-0
 
-```gdscript
-sdf
-var foo
-
-```
