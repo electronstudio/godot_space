@@ -10,7 +10,6 @@ func _process(delta):
 		laser = CHARGING
 	if Input.is_action_just_released("fire"):
 		laser = DISCHARGING
-	
 	if laser == CHARGING:
 		charge += delta
 	elif laser == DISCHARGING:
@@ -21,6 +20,5 @@ func _process(delta):
 		else:
 			hide()
 			monitorable = false
-	
 	charge = clamp(charge, 0.0, 3.0)
 	get_node("/root/main/HUD/charge").value = charge
