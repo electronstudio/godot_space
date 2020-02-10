@@ -3,11 +3,11 @@
 Download the [starter project](godot_space1.zip).  Import it into Godot.  Run the game.  You should have a spaceship sprite that can turn left and right.
 There is also lighting and a HUD.
 
-# 1. Velocity 
+## 1. Velocity 
 
 Change the `velocity` of the `player` to 1600 in the node inspector.  Run the game.
 
-# 2. Camera
+## 2. Camera
 
 We need a camera to track the player.  Add a `Camera2D` node to the `player` node.  In the node inspector set:
 * Current: On
@@ -19,7 +19,7 @@ We need a camera to track the player.  Add a `Camera2D` node to the `player` nod
     * Top: 0
     * Bottom: 0
         
-# 3. Background
+## 3. Background
    
 We would like to add another layer to the scrolling background.
 1. Add another `ParallaxLayer` node to the `ParallaxBackground` node.
@@ -38,7 +38,7 @@ We would like to add another layer to the scrolling background.
 
 Run the game to verify it works.
 
-# 4. Particle effect
+## 4. Particle effect
 
 The player already has a `CPUParticles2D` node made for you.  Click on it.  In node inspector:
 * Emitting: On
@@ -53,7 +53,7 @@ Experiment with changing these settings.  What do they do?
 * Anything else you like
 
 
-# 5. Make enemy move
+## 5. Make enemy move
 
 Open the `enemy.tscn` scene file by double clicking it.
 
@@ -81,7 +81,7 @@ func _process(delta):
 		Bullet.instance().init(self, 3000)
 ```
 
-# 6. Add more enemies
+## 6. Add more enemies
 
 NOTE: The `Light2D` node under `HUD` covers the whole screen with an invisible object (the light) and that makes it difficult to select other sprites because you
 always accidently select the light.  I suggest you click the eye icon next to `Light2D` to hide it. But don't forget to unhide it once you have
@@ -93,7 +93,7 @@ Also try changing `Node2D` `Transform` `Rotation`.
 
 Test the game again.
 
-# 7. Make bullets move
+## 7. Make bullets move
 
 Try pressing space to shoot bullets.  What happens?
 
@@ -110,7 +110,7 @@ func _process(delta):
 
 Test the game again.
 
-# 8. Make bullets collide
+## 8. Make bullets collide
 
 1. Open the `player_bullet.tscn` scene file by double clicking it.
 1. Click `bullet` node.
@@ -129,7 +129,7 @@ func _on_bullet_area_entered(area):
 8. Test the game again.
 
 
-# 9. Make enemy collide
+## 9. Make enemy collide
 
 1. Open the `enemy.tscn` scene file by double clicking it.
 1. Click `enemy` node.
@@ -173,8 +173,7 @@ func _on_player_area_entered(area):
 	$crash_sound.play()
 	modulate = Color(1000, 0, 0, 255)
 	yield(get_tree().create_timer(1.0), "timeout")
-	modulate = Color(1, 1, 1, 255)
-       
+	modulate = Color(1, 1, 1, 255) 
 ```
 
 Test the game again.
@@ -195,9 +194,9 @@ func gamepad(delta):
 		rotation = Util.rotate_toward(rotation, direction, turning * delta) 
 ```
 
-# More types of enemies
+## More types of enemies
 
-# Enemy spawner
+## Enemy spawner
 
 ```gdscript
 extends Timer
@@ -214,7 +213,7 @@ func _on_enemy_spawner_timeout():
 		add_child(enemy)
 ```
 
-# Enemy randomize
+## Enemy randomize
 
 ```gdscript
 func _ready():
@@ -222,8 +221,8 @@ func _ready():
 	rotation = player.position.angle_to_point(position) 
 ```
 
-# Charge laser
+## Charge laser
 
-# Optional - Touch controls
+## Optional - Touch controls
 
-# Title screen
+## Title screen
