@@ -119,11 +119,17 @@ Test the game again.
 ## 8. Make bullets collide
 
 1. Open the `player_bullet.tscn` scene file by double clicking it.
+
 1. Click `bullet` node.
+
 2. In the inspector click `Node` at the top to view the signals.
+
 3. Double click the `area_entered` signal.
+
 4. Select `bullet` from the list of nodes to connect to.
+
 5. Click `connect`.
+
 6. Godot will create an empty function for you.  Replace it with this:
     
 ```gdscript
@@ -132,17 +138,24 @@ func _on_bullet_area_entered(area):
 ```
 
 7. Repeat steps 1-5 for `enemy_bullet.tscn` scene.  (No need to edit the script and add the function again, since it's the same script and you already did it.)
+
 8. Test the game again.
 
 
 ## 9. Make enemy collide
 
 1. Open the `enemy.tscn` scene file by double clicking it.
+
 1. Click `enemy` node.
+
 2. In the inspector click `Node` at the top to view the signals.
+
 3. Double click the `area_entered` signal.
+
 4. Select `enemy` from the list of nodes to connect to.
+
 5. Click `connect`.
+
 6. Godot will create an empty function for you.  Replace it with this:
     
 ```gdscript
@@ -163,11 +176,17 @@ Test the game again.
 # 10. Make player collide
 
 1. Go back to the `main.tscn` scene (should be open as a tab).
+
 1. Click `player` node.
+
 2. In the inspector click `Node` at the top to view the signals.
+
 3. Double click the `area_entered` signal.
+
 4. Select `player` from the list of nodes to connect to.
+
 5. Click `connect`.
+
 6. Godot will create an empty function for you.  Replace it with this:
     
 ```gdscript
