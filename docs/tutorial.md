@@ -4,15 +4,21 @@ listings-no-page-break: true
 ---
 # Space Shooter Tutorial
 
-Download the starter project from [https://electronstudio.github.io/godot_space/godot_space1.zip](https://electronstudio.github.io/godot_space/godot_space1.zip).
+## Import project
+
+Download the starter project: [https://electronstudio.github.io/godot_space/godot_space1.zip](https://electronstudio.github.io/godot_space/godot_space1.zip).
 
 Unzip it.  Open Godot.  `Import` the `project.godot` file.
 
+Helpful video: [https://www.youtube.com/watch?v=ovt4hS9iLYY](https://www.youtube.com/watch?v=ovt4hS9iLYY)
+
 ![](s1.png)
 
-Run the game.  You should have a spaceship sprite that can turn left and right.
+Run the game.
 
-There is also lighting and a HUD.
+You should have a spaceship sprite that can turn left and right.
+
+The project contains many spaceship images you can use.  There is also lighting and a HUD.
 
 ## Player movement
 
@@ -78,7 +84,7 @@ In the node inspector set:
    
 We would like to add another layer to the scrolling background.
 
-1. Add a child node to the`ParallaxBackground` node.  The child node should be a `ParallaxLayer`.
+1. Add a child node to the`ParallaxBackground` node.  The child node must be a `ParallaxLayer`.
 
 2. Click on the `ParallaxLayer2`.
 
@@ -86,9 +92,9 @@ We would like to add another layer to the scrolling background.
     * Motion: Mirroring x: 15360
     * Motion: Mirroring y: 15360
     
-3. Find `backgrounds/stars_big_1024.png` in the filesystem (Bottom left of screen).
+3. Find `stars_big_1024.png` in the FileSystem. (Bottom left of screen, inside `backgrounds` folder.)
 
-4. Drag into the scene in the centre of the screen.
+4. Drag into it the scene in the centre of the screen.
 
 5. Click on the `stars_big_1024` sprite node.
 
@@ -121,7 +127,7 @@ Experiment with changing these settings.  *What do they do?*
 
 Open the `enemy.tscn` scene file by double clicking it.
 
-Right click on the `enemy` node and attach a script.  Replace the contents of the script with:
+Right click on the `enemy` node and attach a script.  Press `Create`.  Replace the contents of the script with:
 
 ```gdscript
 extends Area2D
@@ -145,17 +151,23 @@ func _process(delta):
 		Bullet.instance().init(self, 3000)
 ```
 
+Run the game again.
+
 ## Add more enemies
 
-NOTE: The `Light2D` node under `HUD` covers the whole screen with an invisible object (the light) and that makes it difficult to select other sprites because you
+**NOTE: The `Light2D` node under `HUD` covers the whole screen with an invisible object (the light) and that makes it difficult to select other sprites because you
 always accidently select the light.  I suggest you click the eye icon next to `Light2D` to hide it. But don't forget to unhide it once you have
-finished positioning your sprites!
+finished positioning your sprites!**
 
-In the `main` scene, duplicate (ctrl-D) the enemy node a few times and try changing the exported variables in the node inspector so they move at different velocities. _Can you make a more deadly enemy this way?_
+1. Go back to the `main.tscn` scene (should be open as a tab).
 
-Also try changing `Node2D` `Transform` `Rotation`.
+2. Duplicate (ctrl-D) the enemy node a few times.  Drag the duplicates to new positions in the main window.
 
-Test the game again.
+3. Try changing the exported variables in the node inspector so they move at different velocities. _Can you make a more deadly enemy this way?_
+
+4. Also try changing `Node2D` `Transform` `Rotation`.
+
+5. Test the game again.
 
 ## Make bullets move
 
@@ -195,9 +207,10 @@ func _on_bullet_area_entered(area):
 	queue_free()
 ```
 
-7. Repeat steps 1-5 for `enemy_bullet.tscn` scene.  (No need to edit the script and add the function again, since it's the same script and you already did it.)
+7. Repeat steps 1-5 for `enemy_bullet.tscn` scene.  (No need to edit the script and add the function again,
+since it's the same script and you already did it.)
 
-8. Test the game again.
+8. Test the game again.  _What does the `area_entered` signal do?_
 
 
 ## Make enemy collide
@@ -237,7 +250,7 @@ Test the game again.
 
 1. Click `player` node.
 
-2. In the inspector click `Node` at the top to view the signals.
+2. In the Inspector click `Node` at the top to view the signals.
 
 3. Double click the `area_entered` signal.
 
@@ -259,7 +272,7 @@ func _on_player_area_entered(area):
 	modulate = Color(1, 1, 1, 255) 
 ```
 
-Test the game again.
+Test the game again.  _What does the `modulate` value do?
 
 
 
@@ -267,7 +280,7 @@ Test the game again.
 
 This is only required if you want to play to play with a gamepad.
 
-Open `player.gd` script.  Delete the `gamepad` function and replace it with this:
+Open `player.gd` script.  **Delete** the `gamepad(delta)` function and **replace** it with this:
 
 ```gdscript
 var virtual_stick_direction = Vector2.ZERO
@@ -302,9 +315,65 @@ func _input(event):
 	elif event is InputEventScreenDrag and event.position.x < get_viewport().size.x/2.0:
 		virtual_stick_direction =  (event.position - virtual_stick_origin).normalized()
 ```
-## More types of enemies
 
-## Enemy spawner
+You can use your mouse (hold down left button) to test the touch controls on your computer.
+
+## More types of enemies (advanced)
+
+We could make a new enemy scene from scratch, but it's probably easier to duplicate the existing one.
+
+1. Duplicate (ctrl-D) `enemy.tscn` to create `cool_enemy.tscn`.
+
+2. Double click `cool_enemy.tscn` to open it.
+
+3. Click `2D` at the top of the screen if you are in the script view.
+
+4. Right-click on the `destroyer` sprite node and delete it.
+
+5. Right-click on the `CollisionPolygon2D` sprite node and delete it.
+
+6. In the FileSystem, find a ship png image, e.g. `ships/Faction10-Spaceships/cargoship.png` and drag it into the scene at the (0,0) point.
+
+7. Click on the node you just created (`cargoship`).  Click on the Inspector if it's not visible.  You can see the sprite has
+a texture but does not have a normal map.  Without a normal map lighting will not work.
+
+8. Find the appropriate normal map png (e.g. `cargoship_normal.png`) and drag it on to the `Normal Map` space in the Inspector.
+
+9. In the middle-top of the screen, click the word `Sprite`.  A menu pops up.
+
+10.  Click `Create CollisionPolygon2D Sibling`.  A preview opens.
+
+11. Click `Create CollisionPolygon2d`.
+
+12. Save your finished scene (ctrl-S).
+
+13. Go back to the `main.tscn` scene.
+
+14. Right-click on the `enemies` node.
+
+15. Select `instance child scene`.  A window opens.
+
+16. Double click `cool_enemy.tscn` in the window.
+
+17. Position your enemy by dragging it in the main window.  You could also drag the `cool_enemy.tscn` directly from the FileSystem into the main window.
+
+18. _Can you make more types of enemy, e.g. a big space station?_
+
+
+
+## Enemy spawner (advanced)
+
+Rather than creating enemies ourselves, we will create an invisible node to spawn them for us automatically.
+
+1. Add a child node to `enemies` node.  The type should be `Timer`.
+
+2. Right-click the `Timer` node and rename it to `enemy_spawner`.
+
+3. This node will 'timeout' once every second.  You can change the `Wait Time` in the Inspector if you want.
+
+4. In the Inspector set `autostart` to `On`.
+
+5. Right-click the `enemy_spawner` and attach a script.  Click `create`.  Replace the contents of the script `enemey_spawner.gd` with this code:
 
 ```gdscript
 extends Timer
@@ -321,6 +390,22 @@ func _on_enemy_spawner_timeout():
 		add_child(enemy)
 ```
 
+6. Save (ctrl-S).
+
+7. Click `Node` by the Inspector to view Signals.
+
+8. Double-lick the `timeout()` signal.
+
+9. Select `enemy_spawner` from the list and click `connect`.
+
+10. Click on the `enemy_spawner` node.
+
+11. Click on the Inspector.  See where is says `Enemy` `[empty]`.  This is the kind of enemy it will spawn.
+
+12. Find `enemy.tscn` in the file system and drag it onto the `[empty]`.
+
+13. You can duplicate this spawner to create more spawners and change the exported variables in the Inspector, including which kind of enemy is spawned.
+
 ## Enemy randomize
 
 Add this to `enemy.gd` to randomize the position of the enemies when they spawn.
@@ -333,8 +418,12 @@ func _ready():
 
 ## Charge laser
 
-Note this laser only has two states and so could have been done more simply using a boolean, but I wanted to demonstrate use of `enum`
-because in future you might have more than two states.
+Right-click on the `player` node and select `instance child scene`.  A window opens.
+
+In the window double-click `laser.tscn`.
+
+Right-click on `laser` node and `Attach Script`.  Click `Create`.  Replace the contents of the script with this:
+
 
 ```gdscript
 extends Area2D
@@ -363,7 +452,10 @@ func _process(delta):
 	get_node("/root/main/HUD/charge").value = charge
 ```
 
-## Title screen
+Note this laser only has two states and so could have been done more simply using a boolean, but I wanted to demonstrate use of `enum`
+because in future you might have more than two states.
+
+## Title screen (challenge)
 
 *Can you add a title screen to the game?*  Here are some hints.
 
