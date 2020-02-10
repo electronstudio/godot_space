@@ -77,6 +77,7 @@ In the node inspector set:
     * Top: 0
     * Bottom: 0
 
+![](s6.png){width=4cm}
 
 *What happens if you change these values?*
         
@@ -84,11 +85,12 @@ In the node inspector set:
    
 We would like to add another layer to the scrolling background.
 
-1. Add a child node to the`ParallaxBackground` node.  The child node must be a `ParallaxLayer`.
+1. Right-click on the `ParallaxBackground` node and select `Add Child Node`.
+Choose the type `ParallaxLayer` and press `Create`.
 
 2. Click on the `ParallaxLayer2`.
 
-3. In the node inspector, set:
+3. In the Inspector, set:
     * Motion: Mirroring x: 15360
     * Motion: Mirroring y: 15360
     
@@ -98,7 +100,7 @@ We would like to add another layer to the scrolling background.
 
 5. Click on the `stars_big_1024` sprite node.
 
-6. In the node inspector, under `Node2D` `Transform` set:
+6. In the Inspector, under `Node2D` `Transform` set:
     * Position x: 7680
     * Position y: 7680
     * Scale x: 15
@@ -157,13 +159,13 @@ Run the game again.
 
 **NOTE: The `Light2D` node under `HUD` covers the whole screen with an invisible object (the light) and that makes it difficult to select other sprites because you
 always accidently select the light.  I suggest you click the eye icon next to `Light2D` to hide it. But don't forget to unhide it once you have
-finished positioning your sprites!**
+finished positioning your sprites!**  ![](s8.png){width=4cm}
 
 1. Go back to the `main.tscn` scene (should be open as a tab).
 
 2. Duplicate (ctrl-D) the enemy node a few times.  Drag the duplicates to new positions in the main window.
 
-3. Try changing the exported variables in the node inspector so they move at different velocities. _Can you make a more deadly enemy this way?_
+3. Try changing the exported variables in the Inspector so they move at different velocities. _Can you make a more deadly enemy this way?_
 
 4. Also try changing `Node2D` `Transform` `Rotation`.
 
@@ -192,7 +194,7 @@ Test the game again.  *Why are we testing the distance from the player?*
 
 1. Click `bullet` node.
 
-2. In the inspector click `Node` at the top to view the signals.
+2. In the inspector click `Node` at the top to view the signals.  ![](s7.png){width=4cm}
 
 3. Double click the `area_entered` signal.
 
