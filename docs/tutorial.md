@@ -11,11 +11,45 @@ Unzip it.  Open Godot.  `Import` the `project.godot` file.
 ![](s1.png)
 
 Run the game.  You should have a spaceship sprite that can turn left and right.
+
 There is also lighting and a HUD.
+
+## Player movement
+
+This code is in `player.gd`.  __You do not need to type this, it has already been typed for you!__ Make sure you understand it before you continue.
+
+_Which line moves the player?_
+
+_What is `delta`?_
+
+_How many times per second does the code run?_
+
+```gdscript
+extends Area2D
+
+export var velocity = 0
+export var turning = 4.0
+export var health = 10
+
+var Bullet = preload("res://player_bullet.tscn")
+var score = 0
+
+func _process(delta):
+	if Input.is_action_pressed("turn_left"):
+		rotation -= turning * delta
+	if Input.is_action_pressed("turn_right"):
+		rotation += turning * delta
+	if Input.is_action_just_pressed("fire"):
+		Bullet.instance().init(self, 4000)
+
+	position += Vector2.RIGHT.rotated(rotation) * velocity * delta
+```
 
 ## Velocity 
 
 ![](s2.png){width=5cm}  ![](s5.png){width=5cm} 
+
+When a script `exports` a variable we can change the value using the Inspector without editing the script.
 
 Change the `velocity` of the `player` to 1600 in the node inspector. Run the game.
 
@@ -36,12 +70,15 @@ In the node inspector set:
     * Right: 0
     * Top: 0
     * Bottom: 0
+
+
+*What happens if you change these values?*
         
 ## Background
    
 We would like to add another layer to the scrolling background.
 
-1. Add another `ParallaxLayer` node to the `ParallaxBackground` node.
+1. Add a child node to the`ParallaxBackground` node.  The child node should be a `ParallaxLayer`.
 
 2. Click on the `ParallaxLayer2`.
 
@@ -65,12 +102,12 @@ Run the game to verify it works.
 
 ## Particle effect
 
-The player already has a `CPUParticles2D` node made for you.  Click on it.  In node inspector:
+The player already has a `CPUParticles2D` node made for you.  Click on it.  In the Inspector, set:
 
 * Emitting: On
 * Amount: 50
 
-Experiment with changing these settings.  What do they do?
+Experiment with changing these settings.  *What do they do?*
 
 * Lifetime
 * Spread
@@ -114,7 +151,7 @@ NOTE: The `Light2D` node under `HUD` covers the whole screen with an invisible o
 always accidently select the light.  I suggest you click the eye icon next to `Light2D` to hide it. But don't forget to unhide it once you have
 finished positioning your sprites!
 
-In the `main` scene, duplicate the enemy node a few times and try changing the exported variables in the node inspector so they move at different velocities.
+In the `main` scene, duplicate (ctrl-D) the enemy node a few times and try changing the exported variables in the node inspector so they move at different velocities. _Can you make a more deadly enemy this way?_
 
 Also try changing `Node2D` `Transform` `Rotation`.
 
@@ -122,7 +159,7 @@ Test the game again.
 
 ## Make bullets move
 
-Try pressing space to shoot bullets.  What happens?
+Try pressing space to shoot bullets.  *What happens?  Why?*
 
 We already have scene files for the bullets: `player_bullet.tscn` and `enemy_bullet.tscn`.
 
@@ -135,7 +172,7 @@ func _process(delta):
 		queue_free()
 ```
 
-Test the game again.
+Test the game again.  *Why are we testing the distance from the player?*
 
 ## Make bullets collide
 
@@ -226,7 +263,9 @@ Test the game again.
 
 
 
-## Optional - Gamepad controls
+## Gamepad controls (optional)
+
+This is only required if you want to play to play with a gamepad.
 
 Open `player.gd` script.  Delete the `gamepad` function and replace it with this:
 
@@ -240,6 +279,29 @@ func gamepad(delta):
 		rotation = Util.rotate_toward(rotation, direction, turning * delta) 
 ```
 
+## Touch screen controls (optional)
+
+This requires the gamepad code above to have been added.  If you have a mobile phone or tablet this will allow you to
+play on the touch screen.
+
+Add to `player.gd` script:
+
+```gdscript
+var virtual_stick_origin = Vector2.ZERO
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.position.x < get_viewport().size.x/2.0:
+			if event.pressed:
+				virtual_stick_origin = event.position
+		else:
+			if event.pressed:
+				Input.action_press("fire")
+			else:
+				Input.action_release("fire")
+	elif event is InputEventScreenDrag and event.position.x < get_viewport().size.x/2.0:
+		virtual_stick_direction =  (event.position - virtual_stick_origin).normalized()
+```
 ## More types of enemies
 
 ## Enemy spawner
@@ -261,6 +323,8 @@ func _on_enemy_spawner_timeout():
 
 ## Enemy randomize
 
+Add this to `enemy.gd` to randomize the position of the enemies when they spawn.
+
 ```gdscript
 func _ready():
 	position = player.position + Vector2.RIGHT.rotated(rand_range(0, PI*2)) * 5000
@@ -269,6 +333,52 @@ func _ready():
 
 ## Charge laser
 
-## Optional - Touch controls
+Note this laser only has two states and so could have been done more simply using a boolean, but I wanted to demonstrate use of `enum`
+because in future you might have more than two states.
+
+```gdscript
+extends Area2D
+
+var charge = 0.0
+
+enum  {CHARGING, DISCHARGING}
+var laser = DISCHARGING
+
+func _process(delta):
+	if Input.is_action_just_pressed("fire") and charge < 0.01:
+		laser = CHARGING
+	if Input.is_action_just_released("fire"):
+		laser = DISCHARGING
+	if laser == CHARGING:
+		charge += delta
+	elif laser == DISCHARGING:
+		charge -= delta
+		if charge > 0.3:
+			show()
+			monitorable = true
+		else:
+			hide()
+			monitorable = false
+	charge = clamp(charge, 0.0, 3.0)
+	get_node("/root/main/HUD/charge").value = charge
+```
 
 ## Title screen
+
+*Can you add a title screen to the game?*  Here are some hints.
+
+Create a new scene called `title.tscn`.  Put your title screen text and graphics here.
+
+Attach this script to the root node to start the game when player presses space.
+
+```gdscript
+extends Node2D
+
+func _process(delta):
+	if Input.is_action_just_pressed("fire"):
+		get_tree().change_scene("res://main.tscn")
+```
+
+When the player dies, execute this code to switch to the title screen:
+
+    get_tree().change_scene("res://title.tscn")
