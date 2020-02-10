@@ -1,20 +1,32 @@
 ---
 title: "Space Shooter Tutorial"
 listings-no-page-break: true
-book: true
 ---
 # Space Shooter Tutorial
 
-Download the [starter project](godot_space1.zip).  Import it into Godot.  Run the game.  You should have a spaceship sprite that can turn left and right.
+Download the starter project from [https://electronstudio.github.io/godot_space/godot_space1.zip](https://electronstudio.github.io/godot_space/godot_space1.zip).
+
+Unzip it.  Open Godot.  `Import` the `project.godot` file.
+
+![](s1.png)
+
+Run the game.  You should have a spaceship sprite that can turn left and right.
 There is also lighting and a HUD.
 
 ## Velocity 
 
-Change the `velocity` of the `player` to 1600 in the node inspector.  Run the game.
+![](s2.png){width=5cm}  ![](s5.png){width=5cm} 
+
+Change the `velocity` of the `player` to 1600 in the node inspector. Run the game.
+
 
 ## Camera
 
-We need a camera to track the player.  Add a `Camera2D` node to the `player` node.  In the node inspector set:
+We need a camera to track the player.  Add a `Camera2D` node to the `player` node.
+
+![](s3.png){width=6cm} ![](s4.png){width=7cm}
+
+In the node inspector set:
 
 * Current: On
 * Zoom x: 6

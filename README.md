@@ -16,3 +16,8 @@ Sound:
 
 https://opengameart.org/content/explosion-0
 
+```gdscript
+sdf
+var foo
+
+```
