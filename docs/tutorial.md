@@ -93,7 +93,7 @@ export var VELOCITY = 1000.0
 export var TURNING = 0.7
 export var FIRE_RATE = 0.01
 
-var Bullet = preloadcopypaste("res://enemy_bullet.tscn")
+var Bullet = preload("res://enemy_bullet.tscn")
 onready var player = get_node("/root/main/player")
 
 func _process(delta):
@@ -130,7 +130,7 @@ They are both attached to the same script file, `bullet.gd`.  Double click the f
 
 ```gdscript
 func _process(delta):
-	position += Vector2.RIGHT.rotated(rotationcopypaste) * velocity * delta
+	position += Vector2.RIGHT.rotated(rotation) * velocity * delta
 	if position.distance_to(player.position) > 5000:
 		queue_free()
 ```
@@ -181,7 +181,7 @@ func _on_bullet_area_entered(area):
     
 ```gdscript
 func _on_enemy_area_entered(area):
-	$explosioncopypaste.play()
+	$explosion.play()
 	$AnimationPlayer.play("fade")
 	$CollisionPolygon2D.queue_free()
 	$CPUParticles2D.emitting = true
@@ -215,7 +215,7 @@ func _on_player_area_entered(area):
 	health -= 1
 	get_node("../HUD/health").value = health
 	if health <= 0:
-		get_tree().reload_copypastecurrent_scene()
+		get_tree().reload_current_scene()
 	$crash_sound.play()
 	modulate = Color(1000, 0, 0, 255)
 	yield(get_tree().create_timer(1.0), "timeout")
