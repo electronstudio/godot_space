@@ -20,6 +20,8 @@ Bonsaiheldin | http://bonsaiheld.org https://opengameart.org/content/stars-paral
 
 http://millionthvector.blogspot.com/
 
+https://opengameart.org/content/sparkling-fireball-effect
+
 ## Sound
 
 https://opengameart.org/content/explosion-0
