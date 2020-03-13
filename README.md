@@ -4,6 +4,8 @@ This was made for my CoderDojo students.  It gives you a simple working game to 
 improve it by adding nodes and code step-by-step.  It is intended to be printed out and taught by a teacher who explains
 the code, but if you've coded before you can probably figure it out on your own.
 
+[Watch the video](https://www.youtube.com/watch?v=miJuJ8QvZYc)
+
 [Read the tutorial](https://electronstudio.github.io/godot_space/tutorial)
 
 [Print the tutorial](https://electronstudio.github.io/godot_space/tutorial.pdf)
