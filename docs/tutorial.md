@@ -4,13 +4,13 @@ listings-no-page-break: true
 ---
 # Space Shooter Tutorial
 
+Video of this tutorial: [https://youtu.be/miJuJ8QvZYc](https://www.youtube.com/watch?v=miJuJ8QvZYc)
+
 ## Import project
 
 Download the starter project: [https://electronstudio.github.io/godot_space/godot_space1.zip](https://electronstudio.github.io/godot_space/godot_space1.zip).
 
 Unzip it.  Open Godot.  `Import` the `project.godot` file.
-
-Helpful video: [https://www.youtube.com/watch?v=ovt4hS9iLYY](https://www.youtube.com/watch?v=ovt4hS9iLYY)
 
 ![](s1.png)
 
